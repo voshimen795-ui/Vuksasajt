@@ -112,8 +112,8 @@ export function ServicesBento() {
           <span className="eyebrow">Naše usluge</span>
           <h2 className="heading-lg mt-6">Sve za neprekidno napajanje na jednom mestu</h2>
           <p className="mt-5 text-base leading-relaxed text-steel-400">
-            Od izbora pravog agregata i automatike, preko montaže, do održavanja i hitnog
-            izlaska na teren — vodimo ceo posao umesto vas.
+            Od izbora agregata i automatike, preko montaže, do održavanja i hitnog izlaska
+            na teren.
           </p>
         </Reveal>
 

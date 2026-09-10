@@ -1,0 +1,51 @@
+import Link from "next/link";
+import { ArrowRight, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Reveal } from "@/components/motion/reveal";
+import { site } from "@/config/site";
+
+export function CtaBand({
+  title,
+  text,
+  primary = { label: "Zatražite ponudu", href: "/#ponuda" },
+}: {
+  title: string;
+  text: string;
+  primary?: { label: string; href: string };
+}) {
+  return (
+    <section className="section pt-0">
+      <div className="container">
+        <Reveal>
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-volt/[0.12] via-ink-850 to-ink-900 p-8 sm:p-12">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -right-16 -top-24 h-72 w-72 rounded-full bg-volt/20 blur-[100px]"
+            />
+            <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-xl">
+                <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">{title}</h2>
+                <p className="mt-3 text-[15px] leading-relaxed text-steel-400">{text}</p>
+              </div>
+
+              <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
+                <Button asChild size="lg">
+                  <Link href={primary.href}>
+                    {primary.label}
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                  </Link>
+                </Button>
+                <Button asChild variant="glass" size="lg">
+                  <a href={site.phones.mobile.href}>
+                    <Phone className="h-4 w-4 text-volt" />
+                    {site.phones.mobile.label}
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}

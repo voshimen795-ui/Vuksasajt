@@ -2,16 +2,14 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Check, Fuel, Info, Plug, Zap } from "lucide-react";
+import { ArrowRight, Check, Fuel, Info, Plug } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Reveal } from "@/components/motion/reveal";
-import { useQuote } from "@/components/quote-context";
 import { heavyLoads, profiles, recommend, type LoadId, type ProfileId } from "@/data/calculator";
 import { cn, formatKw } from "@/lib/utils";
 
 export function PowerCalculator() {
-  const { setDraft } = useQuote();
   const [profileId, setProfileId] = React.useState<ProfileId>("domacinstvo");
   const profile = profiles.find((item) => item.id === profileId) ?? profiles[0];
   const [kw, setKw] = React.useState(profile.baseKw);
@@ -32,32 +30,17 @@ export function PowerCalculator() {
 
   const result = React.useMemo(() => recommend(kw, loads), [kw, loads]);
 
-  const requestQuote = () => {
-    setDraft({
-      profile: profile.label,
-      kva: result.recommendedKva,
-      note: `Kalkulator: ${formatKw(result.continuousKw)} kW stalno / ${formatKw(result.peakKw)} kW u startu.`,
-    });
-  };
+  // the quote form lives on the home page, so the result travels in the URL
+  const quoteHref = `/?tip=${encodeURIComponent(profile.label)}&kva=${result.recommendedKva}&napomena=${encodeURIComponent(
+    `Kalkulator: ${formatKw(result.continuousKw)} kW stalno / ${formatKw(result.peakKw)} kW u startu.`,
+  )}#ponuda`;
 
   return (
-    <section id="kalkulator" className="section">
+    <section id="kalkulator" className="section pt-4">
       <div className="pointer-events-none absolute inset-x-0 top-1/4 -z-10 mx-auto h-[380px] max-w-4xl rounded-full bg-volt/[0.07] blur-[120px]" />
 
       <div className="container">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <span className="eyebrow">
-            <Zap className="h-3.5 w-3.5 text-volt" />
-            Kalkulator snage
-          </span>
-          <h2 className="heading-lg mt-6">Koliko kilovata vam zaista treba?</h2>
-          <p className="mt-5 text-base leading-relaxed text-steel-400">
-            Pomerite klizač i označite potrošače koji se pale zajedno. Za nekoliko sekundi
-            dobijate preporučenu klasu agregata — bez pogađanja i bez preplaćivanja.
-          </p>
-        </Reveal>
-
-        <Reveal delay={0.1} className="mt-14">
+        <Reveal>
           <div className="panel overflow-hidden shadow-panel">
             <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
               <div className="border-b border-white/10 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
@@ -200,7 +183,7 @@ export function PowerCalculator() {
                 </div>
 
                 <Button asChild size="lg" className="mt-8 w-full">
-                  <a href="#ponuda" onClick={requestQuote}>
+                  <a href={quoteHref}>
                     Naruči ovaj model
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
                   </a>

@@ -27,19 +27,20 @@ export const site = {
 } as const;
 
 export const navLinks = [
-  { label: "Usluge", href: "#usluge" },
-  { label: "Kalkulator snage", href: "#kalkulator" },
-  { label: "Ponuda", href: "#agregati" },
-  { label: "Zašto mi", href: "#zasto-mi" },
-  { label: "Kontakt", href: "#ponuda" },
+  { label: "Usluge", href: "/#usluge" },
+  { label: "Agregati", href: "/#agregati" },
+  { label: "Kalkulator", href: "/kalkulator" },
+  { label: "Galerija", href: "/galerija" },
+  { label: "O nama", href: "/o-nama" },
 ] as const;
 
 export const serviceLinks = [
-  { label: "Prodaja agregata", href: "#agregati" },
-  { label: "Iznajmljivanje agregata", href: "#usluge" },
-  { label: "Servis agregata", href: "#usluge" },
-  { label: "Automatski ormari (ATS)", href: "#usluge" },
-  { label: "Vodene pumpe", href: "#agregati" },
+  { label: "Prodaja agregata", href: "/#agregati" },
+  { label: "Iznajmljivanje agregata", href: "/#usluge" },
+  { label: "Servis agregata", href: "/#usluge" },
+  { label: "Automatski ormari (ATS)", href: "/#usluge" },
+  { label: "Kalkulator snage", href: "/kalkulator" },
+  { label: "Galerija radova", href: "/galerija" },
 ] as const;
 
 export const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.mapsQuery)}`;

@@ -6,7 +6,6 @@ import { ArrowLeft, ArrowRight, Check, Mail, MapPin, Phone, Send } from "lucide-
 import { Button } from "@/components/ui/button";
 import { Input, Label, Textarea } from "@/components/ui/field";
 import { Reveal } from "@/components/motion/reveal";
-import { useQuote } from "@/components/quote-context";
 import { profiles } from "@/data/calculator";
 import { site } from "@/config/site";
 import { buildMailto } from "@/lib/inquiry";
@@ -53,7 +52,6 @@ function ChipGroup({
 }
 
 export function QuoteForm() {
-  const { draft } = useQuote();
   const [step, setStep] = React.useState(0);
   const [sent, setSent] = React.useState(false);
 
@@ -67,11 +65,16 @@ export function QuoteForm() {
   const [location, setLocation] = React.useState("");
   const [note, setNote] = React.useState("");
 
+  // prefill from the power calculator, which hands its result over in the URL
   React.useEffect(() => {
-    if (draft.profile) setObjectType(draft.profile);
-    if (draft.note) setNote(draft.note);
-    if (draft.kva) {
-      const kva = draft.kva;
+    const params = new URLSearchParams(window.location.search);
+    const tip = params.get("tip");
+    const napomena = params.get("napomena");
+    const kva = Number(params.get("kva"));
+
+    if (tip && profiles.some((profile) => profile.label === tip)) setObjectType(tip);
+    if (napomena) setNote(napomena);
+    if (kva > 0) {
       setPower(
         kva <= 5
           ? powerRanges[0]
@@ -84,7 +87,7 @@ export function QuoteForm() {
                 : powerRanges[4],
       );
     }
-  }, [draft]);
+  }, []);
 
   const canContinue = step === 0 ? Boolean(objectType && serviceType) : Boolean(power && timeline);
   const canSubmit = name.trim().length > 1 && phone.trim().length > 5;
@@ -271,7 +274,7 @@ export function QuoteForm() {
                               <ChipGroup options={powerRanges} value={power} onChange={setPower} />
                               <p className="mt-3 text-xs text-steel-500">
                                 Niste sigurni?{" "}
-                                <a href="#kalkulator" className="text-volt-400 underline underline-offset-4">
+                                <a href="/kalkulator" className="text-volt-400 underline underline-offset-4">
                                   Iskoristite kalkulator snage
                                 </a>
                                 .

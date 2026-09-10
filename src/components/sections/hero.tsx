@@ -1,30 +1,64 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as React from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Gauge, Phone, ShieldCheck, Timer, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Magnetic } from "@/components/ui/magnetic";
-import { PowerGrid } from "@/components/visuals/power-grid";
 import { site } from "@/config/site";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const highlights = [
-  { icon: Timer, label: "Odziv na teren", value: `${site.responseTime}` },
+  { icon: Timer, label: "Odziv na teren", value: site.responseTime },
   { icon: Wrench, label: "Servis i delovi", value: "Sve marke" },
   { icon: ShieldCheck, label: "Garancija", value: "do 2 godine" },
   { icon: Gauge, label: "Opseg snage", value: "2 – 350 kVA" },
 ];
 
+function HeroBackdrop() {
+  const reduced = useReducedMotion();
+
+  return (
+    <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      {reduced ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src="/video/hero-poster.jpg"
+          alt=""
+          className="h-full w-full object-cover opacity-70"
+        />
+      ) : (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/video/hero-poster.jpg"
+          aria-hidden
+          className="h-full w-full object-cover opacity-80"
+        >
+          <source src="/video/hero.webm" type="video/webm" />
+          <source src="/video/hero.mp4" type="video/mp4" />
+        </video>
+      )}
+
+      <div className="absolute inset-0 bg-ink-950/45" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-950/25 to-ink-950" />
+      <div className="absolute inset-0 bg-grid-lines bg-[size:64px_64px] opacity-25" />
+      <div className="absolute left-1/2 top-1/3 h-[420px] w-[760px] max-w-[130vw] -translate-x-1/2 rounded-full bg-volt/[0.10] blur-[130px]" />
+    </div>
+  );
+}
+
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pb-20 pt-32 sm:pb-24 sm:pt-36 lg:pb-28 lg:pt-44">
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-grid-lines bg-[size:64px_64px] mask-fade-b opacity-60" />
-        <PowerGrid className="absolute inset-0 h-full w-full opacity-70" />
-        <div className="absolute left-1/2 top-[-18%] h-[520px] w-[820px] max-w-[130vw] -translate-x-1/2 rounded-full bg-volt/[0.16] blur-[130px]" />
-        <div className="absolute bottom-[-30%] right-[-10%] h-[420px] w-[520px] rounded-full bg-volt-700/10 blur-[120px]" />
-      </div>
+    <section
+      id="top"
+      className="relative overflow-hidden pb-20 pt-32 sm:pb-24 sm:pt-36 lg:pb-28 lg:pt-44"
+    >
+      <HeroBackdrop />
 
       <div className="container">
         <div className="mx-auto max-w-3xl text-center">
@@ -57,11 +91,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.16, ease: EASE }}
-            className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-steel-400 sm:text-lg"
+            className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-steel-300 sm:text-lg"
           >
-            Prodaja, iznajmljivanje i servis dizel i benzinskih agregata širom Srbije.
-            Postavljamo automatiku koja preuzima napajanje u sekundi — i izlazimo na teren
-            kada struja stane.
+            Prodaja, iznajmljivanje i servis agregata širom Srbije — sa automatikom
+            koja preuzima napajanje u sekundi.
           </motion.p>
 
           <motion.div
@@ -73,7 +106,6 @@ export function Hero() {
             <Magnetic className="w-full sm:w-auto">
               <Button asChild size="lg" className="w-full overflow-hidden sm:w-auto">
                 <a href="#ponuda">
-                  <span className="absolute inset-0 -z-10 bg-gradient-to-r from-volt-500 via-volt to-volt-700 opacity-0 transition-opacity duration-300 group-hover/btn:opacity-100" />
                   Zatražite ponudu
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
                 </a>
@@ -96,7 +128,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.42, ease: EASE }}
             className="mt-8 flex justify-center"
           >
-            <span className="animate-float-slow rounded-full border border-volt/25 bg-volt/[0.08] px-4 py-2 text-sm font-semibold text-volt-200 shadow-volt-sm">
+            <span className="animate-float-slow rounded-full border border-volt/25 bg-volt/[0.08] px-4 py-2 text-sm font-semibold text-volt-200 shadow-volt-sm backdrop-blur-sm">
               ⚡ Odziv na teren u roku od {site.responseTime}
             </span>
           </motion.div>

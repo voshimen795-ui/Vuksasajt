@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,6 +13,11 @@ import { cn } from "@/lib/utils";
 export function Navbar() {
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const pathname = usePathname();
+
+  React.useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -34,19 +41,22 @@ export function Navbar() {
       )}
     >
       <div className="container flex h-[72px] items-center justify-between gap-4">
-        <a href="#top" aria-label={`${site.brand} početna`}>
+        <Link href="/" aria-label={`${site.brand} početna`}>
           <Logo />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
-              className="rounded-full px-4 py-2 text-sm font-medium text-steel-400 transition-colors hover:bg-white/5 hover:text-white"
+              className={cn(
+                "rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-white/5 hover:text-white",
+                pathname === link.href ? "text-white" : "text-steel-400",
+              )}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -60,7 +70,7 @@ export function Navbar() {
           </a>
 
           <Button asChild size="sm" className="hidden sm:inline-flex">
-            <a href="#ponuda">Zatražite ponudu</a>
+            <Link href="/#ponuda">Zatražite ponudu</Link>
           </Button>
 
           <button
@@ -86,20 +96,20 @@ export function Navbar() {
           >
             <div className="container flex flex-col gap-1 py-5">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className="rounded-xl px-4 py-3.5 text-base font-medium text-steel-300 transition-colors hover:bg-white/5 hover:text-white"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <div className="mt-3 grid gap-2.5">
                 <Button asChild size="lg">
-                  <a href="#ponuda" onClick={() => setOpen(false)}>
+                  <Link href="/#ponuda" onClick={() => setOpen(false)}>
                     Zatražite ponudu
-                  </a>
+                  </Link>
                 </Button>
                 <Button asChild variant="glass" size="lg">
                   <a href={site.phones.mobile.href}>

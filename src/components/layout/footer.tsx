@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "@/components/layout/logo";
 import { mapsLink, navLinks, serviceLinks, site } from "@/config/site";
@@ -41,12 +42,12 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-steel-500 transition-colors hover:text-volt-400"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -57,12 +58,12 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               {serviceLinks.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-steel-500 transition-colors hover:text-volt-400"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

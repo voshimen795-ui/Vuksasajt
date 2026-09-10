@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
+import { MobileCallDock } from "@/components/layout/mobile-call-dock";
 import { site } from "@/config/site";
 import "./globals.css";
 
@@ -79,7 +82,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {children}
+        <Navbar />
+        <main className="pb-20 sm:pb-0">{children}</main>
+        <Footer />
+        <MobileCallDock />
       </body>
     </html>
   );

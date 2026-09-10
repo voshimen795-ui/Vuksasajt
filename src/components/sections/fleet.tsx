@@ -166,8 +166,7 @@ export function Fleet() {
             <span className="eyebrow">Naša ponuda</span>
             <h2 className="heading-lg mt-6">Agregati za svaku namenu</h2>
             <p className="mt-5 text-base leading-relaxed text-steel-400">
-              Od tihih inverterskih modela za vikendicu do industrijskih dizel agregata sa
-              automatikom. Nemate model sa spiska? Nabavljamo po zahtevu.
+              Od tihih inverterskih modela do industrijskih dizel agregata sa automatikom.
             </p>
           </div>
           <Button asChild variant="outline" size="md" className="shrink-0 self-start lg:self-end">
