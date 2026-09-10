@@ -22,7 +22,7 @@ export default function AboutPage() {
             Ljudi koji <span className="text-gradient-volt">drže struju u pogonu</span>
           </>
         }
-        lede={`${site.legalName} se bavi agregatima od izbora i proračuna snage, preko montaže i automatike, do servisa i hitnih intervencija. Sve na jednom mestu, za domaćinstva, gradilišta i firme.`}
+        lede={`${site.legalName} pokriva sve — proračun snage, izbor uređaja, montažu i automatiku, servis i hitne intervencije.`}
       />
 
       <AboutStory />
@@ -30,7 +30,7 @@ export default function AboutPage() {
       <Faq />
       <CtaBand
         title="Popričajmo o vašem objektu"
-        text="Recite nam šta pokrećete — predlažemo rešenje i šaljemo ponudu, najčešće istog radnog dana."
+        text="Recite nam šta pokrećete — ponudu šaljemo najčešće istog radnog dana."
       />
     </>
   );

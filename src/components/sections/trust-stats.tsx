@@ -18,22 +18,22 @@ const reasons = [
   {
     icon: Wrench,
     title: "Sopstveni servis",
-    text: "Ne prodajemo pa se povlačimo — održavamo, popravljamo i obezbeđujemo delove.",
+    text: "Održavamo, popravljamo i obezbeđujemo delove.",
   },
   {
     icon: Truck,
     title: "Dostava i montaža",
-    text: "Dovozimo agregat, priključujemo ga i puštamo u rad na vašoj lokaciji.",
+    text: "Dovozimo, priključujemo i puštamo u rad na vašoj lokaciji.",
   },
   {
     icon: Clock,
     title: "Dežurstvo 24/7",
-    text: "Kvar ne bira vreme. Naš tim je dostupan i vikendom i praznikom.",
+    text: "Dostupni smo i vikendom i praznikom.",
   },
   {
     icon: MapPin,
     title: "Cela Srbija",
-    text: `Baza u ${site.address.city}u, izlazak na teren širom zemlje.`,
+    text: `Baza u ${site.address.city}u, teren širom zemlje.`,
   },
 ];
 
@@ -48,9 +48,8 @@ export function TrustStats() {
             <span className="eyebrow">Zašto baš mi</span>
             <h2 className="heading-lg mt-6">Ozbiljna oprema traži ozbiljnu podršku</h2>
             <p className="mt-5 text-base leading-relaxed text-steel-400">
-              Agregat kupujete jednom, a na njega se oslanjate godinama. Zato uz svaki uređaj
-              dobijate proračun snage, montažu, plan održavanja i broj telefona koji se javlja
-              i u tri ujutru.
+              Agregat kupujete jednom, a oslanjate se na njega godinama. Uz uređaj idu
+              proračun, montaža, plan održavanja i broj koji se javlja i u tri ujutru.
             </p>
 
             <dl className="mt-10 grid grid-cols-2 gap-4">

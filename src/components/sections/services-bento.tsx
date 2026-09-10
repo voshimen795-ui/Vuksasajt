@@ -18,7 +18,7 @@ const services = [
     icon: PackageCheck,
     title: "Prodaja agregata",
     description:
-      "Novi i provereni polovni dizel i benzinski agregati sa garancijom, uputstvom i puštanjem u rad na vašoj lokaciji.",
+      "Novi i provereni polovni dizel i benzinski agregati, sa garancijom i puštanjem u rad.",
     points: ["Novi i polovni", "Garancija do 2 godine", "Puštanje u rad"],
     art: "portable" as const,
     className: "lg:col-span-2 lg:row-span-2",
@@ -27,8 +27,7 @@ const services = [
   {
     icon: CalendarClock,
     title: "Iznajmljivanje",
-    description:
-      "Kratkoročni i dugoročni najam sa dostavom, priključenjem i preuzimanjem — od jednog dana do cele sezone.",
+    description: "Od jednog dana do cele sezone, sa dostavom i priključenjem.",
     points: ["Dnevni i mesečni najam", "Dostava i priključenje"],
     art: "inverter" as const,
     className: "lg:col-span-2",
@@ -36,8 +35,7 @@ const services = [
   {
     icon: ShieldAlert,
     title: "Servis i hitne intervencije",
-    description:
-      "Redovno održavanje po planu i dežurni tim koji izlazi na teren non-stop, 365 dana u godini.",
+    description: "Redovno održavanje po planu i dežurni tim na terenu non-stop.",
     points: ["24/7 dežurstvo", "Originalni delovi"],
     art: "industrial" as const,
     className: "lg:col-span-2",
@@ -46,8 +44,7 @@ const services = [
   {
     icon: ToggleRight,
     title: "Automatski ormari (ATS)",
-    description:
-      "Projektovanje i montaža automatike koja prebacuje napajanje na agregat u roku od nekoliko sekundi.",
+    description: "Automatika koja prebacuje napajanje na agregat za nekoliko sekundi.",
     points: ["ATS / DEA", "Daljinski nadzor"],
     art: "ats" as const,
     className: "lg:col-span-2",
@@ -55,7 +52,7 @@ const services = [
   {
     icon: Droplets,
     title: "Vodene pumpe",
-    description: "Motorne pumpe za navodnjavanje, gradilišta i ispumpavanje poplavljenih prostora.",
+    description: "Motorne pumpe za navodnjavanje, gradilišta i ispumpavanje.",
     points: ["2″ i 3″", "Servis i delovi"],
     art: "pump" as const,
     className: "lg:col-span-2",
@@ -112,8 +109,7 @@ export function ServicesBento() {
           <span className="eyebrow">Naše usluge</span>
           <h2 className="heading-lg mt-6">Sve za neprekidno napajanje na jednom mestu</h2>
           <p className="mt-5 text-base leading-relaxed text-steel-400">
-            Od izbora agregata i automatike, preko montaže, do održavanja i hitnog izlaska
-            na teren.
+            Od izbora i montaže do održavanja i hitnog izlaska na teren.
           </p>
         </Reveal>
 

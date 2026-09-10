@@ -34,7 +34,7 @@ export const projects: Project[] = [
     title: "Rezervno napajanje hladnjače",
     category: "ats",
     summary:
-      "Dizel agregat u kućištu sa automatskim prebacivanjem, tako da rashladni sistem ne staje ni na minut pri nestanku struje.",
+      "Dizel agregat u kućištu sa automatikom, tako da rashladni sistem ne staje pri nestanku struje.",
     scope: ["Isporuka agregata", "ATS ormar", "Puštanje u rad"],
     power: "60 kVA",
     objectType: "Hladnjača",
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     title: "Agregat za poslovni objekat",
     category: "ugradnja",
     summary:
-      "Postavljanje agregata sa kućištem za smanjenje buke, priprema temelja i povezivanje na razvodni ormar objekta.",
+      "Agregat sa kućištem za smanjenje buke, sa pripremom temelja i povezivanjem na razvodni ormar.",
     scope: ["Priprema temelja", "Montaža", "Elektro povezivanje"],
     power: "20 kVA",
     objectType: "Poslovni prostor",
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     title: "Napajanje gradilišta",
     category: "najam",
     summary:
-      "Iznajmljivanje agregata za period izvođenja radova, sa dostavom, priključenjem i preuzimanjem po završetku.",
+      "Najam za period izvođenja radova, sa dostavom, priključenjem i preuzimanjem.",
     scope: ["Dostava na teren", "Priključenje", "Preuzimanje"],
     power: "30 kVA",
     objectType: "Gradilište",
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     title: "Automatika za ordinaciju",
     category: "ats",
     summary:
-      "ATS ormar koji pokreće agregat i prebacuje napajanje u roku od nekoliko sekundi, bez intervencije osoblja.",
+      "ATS ormar koji pokreće agregat i prebacuje napajanje za nekoliko sekundi, bez intervencije osoblja.",
     scope: ["Izrada ormara", "Programiranje", "Testiranje"],
     power: "15 kVA",
     objectType: "Zdravstvena ustanova",
@@ -78,7 +78,7 @@ export const projects: Project[] = [
     title: "Bešumno napajanje događaja",
     category: "najam",
     summary:
-      "Inverterski agregati za bine i ugostiteljsku opremu, izabrani prema nivou buke i osetljivosti elektronike.",
+      "Inverterski agregati za bine i ugostiteljsku opremu, birani prema nivou buke.",
     scope: ["Proračun snage", "Dostava", "Dežurstvo na licu mesta"],
     power: "3 – 10 kVA",
     objectType: "Događaj na otvorenom",
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     title: "Redovan servis agregata",
     category: "servis",
     summary:
-      "Planska zamena ulja, filtera i provera akumulatora i automatike, sa izveštajem o stanju uređaja.",
+      "Zamena ulja i filtera, provera akumulatora i automatike, uz izveštaj o stanju.",
     scope: ["Zamena ulja i filtera", "Provera automatike", "Izveštaj"],
     power: "Sve klase",
     objectType: "Ugovoreno održavanje",
@@ -100,7 +100,7 @@ export const projects: Project[] = [
     title: "Hitna intervencija na terenu",
     category: "servis",
     summary:
-      "Izlazak dežurnog tima, dijagnostika kvara i osposobljavanje agregata van radnog vremena.",
+      "Dežurni tim, dijagnostika kvara i osposobljavanje van radnog vremena.",
     scope: ["Dijagnostika", "Popravka", "Provera pod opterećenjem"],
     power: "Sve klase",
     objectType: "Dežurstvo 24/7",
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     title: "Pumpe za navodnjavanje",
     category: "ugradnja",
     summary:
-      "Isporuka motornih pumpi sa proračunom protoka i visine dizanja prema konfiguraciji terena.",
+      "Motorne pumpe sa proračunom protoka i visine dizanja prema terenu.",
     scope: ["Izbor pumpe", "Isporuka", "Obuka za rukovanje"],
     power: "600 – 1000 l/min",
     objectType: "Poljoprivredno gazdinstvo",

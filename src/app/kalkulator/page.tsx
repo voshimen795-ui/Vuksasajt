@@ -24,7 +24,7 @@ export default function CalculatorPage() {
               Koliko kilovata <span className="text-gradient-volt">vam zaista treba?</span>
             </>
           }
-          lede="Agregat koji je premali gasi se pod opterećenjem, a preveliki nepotrebno troši gorivo. Pomerite klizač, označite potrošače koji se pale zajedno i za nekoliko sekundi dobijate preporučenu klasu."
+          lede="Premali agregat se gasi pod opterećenjem, preveliki troši gorivo bez potrebe. Pomerite klizač, označite potrošače i dobićete preporučenu klasu."
         />
       </div>
 
@@ -32,7 +32,7 @@ export default function CalculatorPage() {
       <Faq />
       <CtaBand
         title="Proverite proračun sa inženjerom"
-        text="Pošaljite rezultat i javljamo se sa konkretnom ponudom, rokom isporuke i predlogom automatike."
+        text="Pošaljite rezultat i javljamo se sa cenom, rokom i predlogom automatike."
       />
     </>
   );

@@ -121,8 +121,7 @@ export function QuoteForm() {
             <span className="eyebrow">Zatražite ponudu</span>
             <h2 className="heading-lg mt-6">Ponuda na osnovu vaših stvarnih potreba</h2>
             <p className="mt-5 text-base leading-relaxed text-steel-400">
-              Tri kratka koraka i imamo sve što nam treba da vam pošaljemo konkretnu cenu —
-              bez nagađanja i bez skrivenih troškova.
+              Tri kratka koraka do konkretne cene, bez skrivenih troškova.
             </p>
 
             <ul className="mt-10 space-y-3">

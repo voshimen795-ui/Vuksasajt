@@ -20,14 +20,14 @@ export default function GalleryPage() {
             Poslovi koje <span className="text-gradient-volt">svakodnevno izvodimo</span>
           </>
         }
-        lede="Od ugradnje agregata sa automatikom, preko najma za gradilišta i događaje, do servisa i hitnih izlazaka na teren. Izaberite vrstu posla da vidite šta tačno obuhvata."
+        lede="Ugradnja sa automatikom, najam za gradilišta i događaje, servis i hitni izlasci. Izaberite vrstu posla da vidite šta obuhvata."
       />
 
       <Gallery />
 
       <CtaBand
         title="Imate sličan objekat?"
-        text="Recite nam šta pokrećete i gde se objekat nalazi — izlazimo na teren, merimo i predlažemo rešenje."
+        text="Recite nam šta pokrećete i gde — izlazimo na teren i predlažemo rešenje."
       />
     </>
   );

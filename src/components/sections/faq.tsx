@@ -10,32 +10,31 @@ const faqs = [
   {
     question: "Kako da znam koliki mi agregat treba?",
     answer:
-      "Saberite snagu svih uređaja koji rade istovremeno i dodajte rezervu za uređaje sa jakim startom, poput klime, pumpe ili elektromotora. Kalkulator na ovoj stranici radi taj proračun umesto vas, a naš inženjer ga besplatno proverava pre nego što pošaljemo ponudu.",
+      "Saberite potrošače koji rade istovremeno i dodajte rezervu za one sa jakim startom (klima, pumpa, motor). Kalkulator to radi umesto vas, a mi proračun proveravamo besplatno.",
   },
   {
-    question: "Koja je razlika između benzinskog i dizel agregata?",
+    question: "Benzinski ili dizel?",
     answer:
-      "Benzinski agregati su lakši i povoljniji, pa su idealni za povremenu upotrebu do nekoliko kilovata. Dizel agregati troše manje goriva po satu, traju duže pod opterećenjem i logičan su izbor za svakodnevni rad i veće snage.",
+      "Benzinski su lakši i povoljniji, za povremenu upotrebu do nekoliko kilovata. Dizel troši manje po satu i bolje podnosi svakodnevni rad i veće snage.",
   },
   {
-    question: "Šta je ATS ormar i da li mi je potreban?",
+    question: "Šta je ATS ormar?",
     answer:
-      "ATS je automatika koja prepozna nestanak struje, sama pokrene agregat i prebaci napajanje objekta na njega — obično za nekoliko sekundi. Neophodan je svuda gde prekid napajanja pravi štetu: hladnjače, serverske sobe, apoteke, proizvodnja.",
+      "Automatika koja pri nestanku struje sama pokrene agregat i prebaci napajanje, obično za nekoliko sekundi. Neophodna tamo gde prekid pravi štetu — hladnjače, serverske sobe, apoteke.",
   },
   {
-    question: "Da li je moguće iznajmiti agregat samo na nekoliko dana?",
+    question: "Može li najam na nekoliko dana?",
     answer:
-      "Da. Iznajmljujemo i na jedan dan i na duži period. U dogovor ulazi dostava, priključenje i preuzimanje uređaja, a za duže najmove dogovaramo povoljniju dnevnu cenu.",
+      "Može, i na jedan dan i na duži period. Dostava, priključenje i preuzimanje ulaze u dogovor.",
   },
   {
     question: "Servisirate li agregat koji nije kupljen kod vas?",
-    answer:
-      "Servisiramo uređaje bez obzira na to gde su kupljeni. Radimo redovne servise po planu održavanja, kao i vanredne popravke i zamenu delova.",
+    answer: "Servisiramo sve marke, bez obzira gde su kupljene — redovno održavanje i popravke.",
   },
   {
-    question: "Koliko brzo izlazite na teren u slučaju kvara?",
+    question: "Koliko brzo izlazite na teren?",
     answer:
-      "Dežurni tim radi 24 sata dnevno. Za lokacije u Beogradu i okolini na terenu smo najčešće u roku od sat vremena, a za ostatak Srbije termin dogovaramo odmah po pozivu.",
+      "Dežurstvo je 24/7. U Beogradu i okolini najčešće u roku od sat vremena, za ostatak Srbije termin dogovaramo odmah po pozivu.",
   },
 ];
 
@@ -48,8 +47,7 @@ export function Faq() {
             <span className="eyebrow">Česta pitanja</span>
             <h2 className="heading-lg mt-6">Pitanja koja najčešće dobijamo</h2>
             <p className="mt-5 text-base leading-relaxed text-steel-400">
-              Ako nešto nije jasno, javite se telefonom — objasnićemo bez tehničkog žargona
-              i bez obaveze.
+              Ako nešto nije jasno, pozovite — objasnićemo bez obaveze.
             </p>
           </Reveal>
 

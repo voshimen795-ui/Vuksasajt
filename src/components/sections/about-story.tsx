@@ -7,22 +7,22 @@ const steps = [
   {
     icon: Calculator,
     title: "Proračun snage",
-    text: "Prvo utvrdimo šta tačno pokrećete i koliko snage traži start najjačeg potrošača.",
+    text: "Utvrdimo šta pokrećete i koliko traži start najjačeg potrošača.",
   },
   {
     icon: PackageCheck,
     title: "Izbor uređaja",
-    text: "Predlažemo agregat prema snazi, gorivu i dozvoljenom nivou buke na lokaciji.",
+    text: "Predlažemo model prema snazi, gorivu i nivou buke.",
   },
   {
     icon: Wrench,
-    title: "Montaža i puštanje u rad",
-    text: "Dovozimo uređaj, povezujemo ga i testiramo pod stvarnim opterećenjem.",
+    title: "Montaža",
+    text: "Dovozimo, povezujemo i testiramo pod opterećenjem.",
   },
   {
     icon: Headphones,
     title: "Održavanje",
-    text: "Planiramo redovne servise i ostajemo dostupni za hitne intervencije.",
+    text: "Redovni servisi i dežurstvo za hitne intervencije.",
   },
 ];
 
@@ -36,17 +36,16 @@ export function AboutStory() {
             <div className="mt-6 space-y-5 text-base leading-relaxed text-steel-400">
               <p>
                 {site.legalName} se bavi prodajom, iznajmljivanjem i servisom agregata i
-                generatora struje, kao i motornih vodenih pumpi. Radimo sa domaćinstvima,
-                gradilištima i firmama kojima prekid napajanja pravi direktnu štetu.
+                vodenih pumpi — za domaćinstva, gradilišta i firme kojima prekid napajanja
+                pravi štetu.
               </p>
               <p>
-                Ne prodajemo uređaj pa se povlačimo. Pre ponude uvek pitamo šta pokrećete,
-                da li vam treba tih rad, koliko goriva sme da troši i da li je potrebna
-                automatika koja sama preuzima napajanje. Tek onda predlažemo model.
+                Pre ponude pitamo šta pokrećete, da li vam treba tih rad i da li je
+                potrebna automatika. Tek onda predlažemo model.
               </p>
               <p>
-                Sedište nam je u {site.address.city}u, a na teren izlazimo širom Srbije.
-                Servisiramo i uređaje koji nisu kupljeni kod nas.
+                Sedište je u {site.address.city}u, na teren izlazimo širom Srbije.
+                Servisiramo i uređaje kupljene drugde.
               </p>
             </div>
           </Reveal>
@@ -62,8 +61,7 @@ export function AboutStory() {
                 Od 2 kVA do industrijskih postrojenja
               </p>
               <p className="relative mt-2 text-sm leading-relaxed text-steel-400">
-                Prenosivi benzinski agregati, tihi inverterski modeli, dizel agregati u
-                kućištu i ATS ormari za automatsko prebacivanje napajanja.
+                Prenosivi benzinski, tihi inverterski, dizel u kućištu i ATS ormari.
               </p>
             </div>
           </Reveal>
