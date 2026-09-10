@@ -1,6 +1,6 @@
 import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "@/components/layout/logo";
-import { mapsLink, mapsUrl, navLinks, serviceLinks, site } from "@/config/site";
+import { mapsLink, navLinks, serviceLinks, site } from "@/config/site";
 
 export function Footer() {
   return (
@@ -139,15 +139,33 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 overflow-hidden rounded-3xl border border-white/10">
-          <iframe
-            src={mapsUrl}
-            title={`Lokacija — ${site.legalName}`}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="h-[280px] w-full grayscale-[0.4] contrast-125"
+        <a
+          href={mapsLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative mt-14 flex h-[220px] items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-ink-850/60 transition-colors hover:border-volt/35 sm:h-[260px]"
+        >
+          <span
+            aria-hidden
+            className="absolute inset-0 bg-grid-lines bg-[size:38px_38px] opacity-70"
           />
-        </div>
+          <span
+            aria-hidden
+            className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-volt/15 blur-3xl"
+          />
+          <span className="relative flex flex-col items-center gap-3 text-center">
+            <span className="relative flex h-12 w-12 items-center justify-center rounded-full border border-volt/35 bg-volt/15 text-volt">
+              <MapPin className="h-5 w-5" />
+              <span className="absolute inset-0 animate-pulse-ring rounded-full bg-volt/30" />
+            </span>
+            <span className="font-display text-lg font-bold text-white">
+              {site.address.street}, {site.address.district}
+            </span>
+            <span className="text-sm text-steel-500">
+              {site.address.postal} {site.address.city} — otvorite u Google Mapama
+            </span>
+          </span>
+        </a>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-steel-500 sm:flex-row">
           <p>

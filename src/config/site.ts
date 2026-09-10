@@ -42,5 +42,4 @@ export const serviceLinks = [
   { label: "Vodene pumpe", href: "#agregati" },
 ] as const;
 
-export const mapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(site.mapsQuery)}&output=embed`;
 export const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.mapsQuery)}`;
