@@ -11,6 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { TiltCard } from "@/components/ui/tilt-card";
 import { GeneratorArt } from "@/components/visuals/generator-art";
 import { projectCategories, projects, type Project, type ProjectCategory } from "@/data/projects";
 import { cn } from "@/lib/utils";
@@ -21,7 +22,7 @@ function ProjectCard({ project }: { project: Project }) {
       <DialogTrigger asChild>
         <button
           type="button"
-          className="group relative flex h-full w-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-850/60 text-left transition-all duration-500 hover:-translate-y-1.5 hover:border-volt/35 hover:shadow-panel"
+          className="group relative flex h-full w-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-850/60 text-left transition-[border-color,box-shadow] duration-500 hover:border-volt/35 hover:shadow-panel"
         >
           <div className="relative flex h-48 items-center justify-center overflow-hidden border-b border-white/10 bg-gradient-to-b from-white/[0.05] to-transparent">
             <div className="absolute inset-x-10 bottom-0 h-24 rounded-full bg-volt/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
@@ -153,7 +154,9 @@ export function Gallery() {
                 transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
                 className="min-w-0"
               >
-                <ProjectCard project={project} />
+                <TiltCard className="h-full">
+                  <ProjectCard project={project} />
+                </TiltCard>
               </motion.div>
             ))}
           </AnimatePresence>

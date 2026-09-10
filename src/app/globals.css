@@ -65,7 +65,55 @@
   }
 
   .section {
-    @apply relative py-20 sm:py-24 lg:py-32;
+    @apply relative py-14 sm:py-16 lg:py-24;
+  }
+
+  /* odsjaj prelazi preko dugmeta pri prelasku mišem */
+  .btn-sheen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(
+      100deg,
+      transparent 25%,
+      rgba(255, 255, 255, 0.35) 50%,
+      transparent 75%
+    );
+    transform: translateX(-130%);
+  }
+
+  .btn-sheen:hover::after {
+    animation: btn-sheen 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @keyframes btn-sheen {
+    to {
+      transform: translateX(130%);
+    }
+  }
+
+  /* natpis se pri prelasku zamenjuje kopijom koja ulazi odozdo */
+  .link-swap {
+    @apply relative inline-flex overflow-hidden;
+  }
+
+  .link-swap > span {
+    display: block;
+    transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .link-swap > span:last-child {
+    @apply absolute inset-0 translate-y-full text-white;
+  }
+
+  .link-swap:hover > span:first-child {
+    @apply -translate-y-full;
+  }
+
+  .link-swap:hover > span:last-child {
+    @apply translate-y-0;
   }
 }
 
@@ -90,6 +138,12 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+}
+
+/* pokazivač se sakriva tek kad se prilagođeni kursor stvarno montira */
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,5 +1,6 @@
 import { Calculator, Headphones, PackageCheck, Wrench } from "lucide-react";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
+import { TextReveal } from "@/components/motion/text-reveal";
 import { GeneratorArt } from "@/components/visuals/generator-art";
 import { site } from "@/config/site";
 
@@ -32,7 +33,10 @@ export function AboutStory() {
       <div className="container">
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
           <Reveal>
-            <h2 className="heading-lg">Agregat nije samo mašina — to je vaša rezerva</h2>
+            <TextReveal
+              className="heading-lg"
+              segments={[{ text: "Agregat nije samo mašina —" }, { text: "to je vaša rezerva", accent: true }]}
+            />
             <div className="mt-6 space-y-5 text-base leading-relaxed text-steel-400">
               <p>
                 {site.legalName} se bavi prodajom, iznajmljivanjem i servisom agregata i
@@ -69,7 +73,10 @@ export function AboutStory() {
 
         <div className="mt-20">
           <Reveal>
-            <h2 className="heading-lg max-w-xl">Kako izgleda saradnja</h2>
+            <TextReveal
+              className="heading-lg max-w-xl"
+              segments={[{ text: "Kako izgleda" }, { text: "saradnja", accent: true }]}
+            />
           </Reveal>
 
           <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

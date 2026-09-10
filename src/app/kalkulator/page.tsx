@@ -19,11 +19,7 @@ export default function CalculatorPage() {
         <PowerGrid className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] w-full opacity-50" />
         <PageHero
           eyebrow="Kalkulator snage"
-          title={
-            <>
-              Koliko kilovata <span className="text-gradient-volt">vam zaista treba?</span>
-            </>
-          }
+          title={[{ text: "Koliko kilovata" }, { text: "vam zaista treba?", accent: true }]}
           lede="Premali agregat se gasi pod opterećenjem, preveliki troši gorivo bez potrebe. Pomerite klizač, označite potrošače i dobićete preporučenu klasu."
         />
       </div>

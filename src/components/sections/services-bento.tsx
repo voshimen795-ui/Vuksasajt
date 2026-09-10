@@ -10,6 +10,7 @@ import {
   ToggleRight,
 } from "lucide-react";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
+import { TextReveal } from "@/components/motion/text-reveal";
 import { GeneratorArt } from "@/components/visuals/generator-art";
 import { cn } from "@/lib/utils";
 
@@ -107,7 +108,13 @@ export function ServicesBento() {
       <div className="container">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Naše usluge</span>
-          <h2 className="heading-lg mt-6">Sve za neprekidno napajanje na jednom mestu</h2>
+          <TextReveal
+            className="heading-lg mt-6"
+            segments={[
+              { text: "Sve za neprekidno napajanje" },
+              { text: "na jednom mestu", accent: true },
+            ]}
+          />
           <p className="mt-5 text-base leading-relaxed text-steel-400">
             Od izbora i montaže do održavanja i hitnog izlaska na teren.
           </p>

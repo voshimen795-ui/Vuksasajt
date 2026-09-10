@@ -3,6 +3,7 @@
 import { Clock, MapPin, Truck, Wrench } from "lucide-react";
 import { CountUp } from "@/components/motion/count-up";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
+import { TextReveal } from "@/components/motion/text-reveal";
 import { sectors } from "@/data/products";
 import { site } from "@/config/site";
 
@@ -46,7 +47,10 @@ export function TrustStats() {
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <Reveal>
             <span className="eyebrow">Zašto baš mi</span>
-            <h2 className="heading-lg mt-6">Ozbiljna oprema traži ozbiljnu podršku</h2>
+            <TextReveal
+              className="heading-lg mt-6"
+              segments={[{ text: "Ozbiljna oprema traži" }, { text: "ozbiljnu podršku", accent: true }]}
+            />
             <p className="mt-5 text-base leading-relaxed text-steel-400">
               Agregat kupujete jednom, a oslanjate se na njega godinama. Uz uređaj idu
               proračun, montaža, plan održavanja i broj koji se javlja i u tri ujutru.

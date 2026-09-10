@@ -17,11 +17,7 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="O nama"
-        title={
-          <>
-            Ljudi koji <span className="text-gradient-volt">drže struju u pogonu</span>
-          </>
-        }
+        title={[{ text: "Ljudi koji" }, { text: "drže struju u pogonu", accent: true }]}
         lede={`${site.legalName} pokriva sve — proračun snage, izbor uređaja, montažu i automatiku, servis i hitne intervencije.`}
       />
 

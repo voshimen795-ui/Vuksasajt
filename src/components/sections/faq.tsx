@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Reveal } from "@/components/motion/reveal";
+import { TextReveal } from "@/components/motion/text-reveal";
 
 const faqs = [
   {
@@ -45,7 +46,10 @@ export function Faq() {
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <Reveal>
             <span className="eyebrow">Česta pitanja</span>
-            <h2 className="heading-lg mt-6">Pitanja koja najčešće dobijamo</h2>
+            <TextReveal
+              className="heading-lg mt-6"
+              segments={[{ text: "Pitanja koja" }, { text: "najčešće dobijamo", accent: true }]}
+            />
             <p className="mt-5 text-base leading-relaxed text-steel-400">
               Ako nešto nije jasno, pozovite — objasnićemo bez obaveze.
             </p>

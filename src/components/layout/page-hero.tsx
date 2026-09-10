@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { TextReveal, type Segment } from "@/components/motion/text-reveal";
 
 export function PageHero({
   eyebrow,
@@ -8,12 +9,12 @@ export function PageHero({
   children,
 }: {
   eyebrow: string;
-  title: React.ReactNode;
+  title: Segment[];
   lede: string;
   children?: React.ReactNode;
 }) {
   return (
-    <section className="relative overflow-hidden pb-14 pt-32 sm:pb-16 sm:pt-36 lg:pt-40">
+    <section className="relative overflow-hidden pb-10 pt-28 sm:pb-12 sm:pt-32 lg:pt-36">
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-grid-lines bg-[size:64px_64px] mask-fade-b opacity-40" />
         <div className="absolute left-1/2 top-[-30%] h-[420px] w-[720px] max-w-[130vw] -translate-x-1/2 rounded-full bg-volt/[0.12] blur-[130px]" />
@@ -30,7 +31,7 @@ export function PageHero({
 
         <div className="mt-8 max-w-3xl">
           <span className="eyebrow">{eyebrow}</span>
-          <h1 className="heading-xl mt-6">{title}</h1>
+          <TextReveal as="h1" className="heading-xl mt-6" segments={title} />
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-steel-400 sm:text-lg">{lede}</p>
           {children && <div className="mt-8">{children}</div>}
         </div>

@@ -15,11 +15,7 @@ export default function GalleryPage() {
     <>
       <PageHero
         eyebrow="Galerija"
-        title={
-          <>
-            Poslovi koje <span className="text-gradient-volt">svakodnevno izvodimo</span>
-          </>
-        }
+        title={[{ text: "Poslovi koje" }, { text: "svakodnevno izvodimo", accent: true }]}
         lede="Ugradnja sa automatikom, najam za gradilišta i događaje, servis i hitni izlasci. Izaberite vrstu posla da vidite šta obuhvata."
       />
 

@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight, Check, Mail, MapPin, Phone, Send } from "lucide-
 import { Button } from "@/components/ui/button";
 import { Input, Label, Textarea } from "@/components/ui/field";
 import { Reveal } from "@/components/motion/reveal";
+import { TextReveal } from "@/components/motion/text-reveal";
 import { profiles } from "@/data/calculator";
 import { site } from "@/config/site";
 import { buildMailto } from "@/lib/inquiry";
@@ -119,7 +120,10 @@ export function QuoteForm() {
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <Reveal>
             <span className="eyebrow">Zatražite ponudu</span>
-            <h2 className="heading-lg mt-6">Ponuda na osnovu vaših stvarnih potreba</h2>
+            <TextReveal
+              className="heading-lg mt-6"
+              segments={[{ text: "Ponuda na osnovu" }, { text: "vaših stvarnih potreba", accent: true }]}
+            />
             <p className="mt-5 text-base leading-relaxed text-steel-400">
               Tri kratka koraka do konkretne cene, bez skrivenih troškova.
             </p>

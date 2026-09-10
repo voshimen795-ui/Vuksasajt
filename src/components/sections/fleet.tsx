@@ -13,6 +13,8 @@ import {
 } from "@/components/ui/dialog";
 import { Input, Label, Textarea } from "@/components/ui/field";
 import { Reveal } from "@/components/motion/reveal";
+import { TextReveal } from "@/components/motion/text-reveal";
+import { TiltCard } from "@/components/ui/tilt-card";
 import { GeneratorArt } from "@/components/visuals/generator-art";
 import { categories, products, type CategoryId, type Product } from "@/data/products";
 import { buildMailto } from "@/lib/inquiry";
@@ -106,7 +108,7 @@ function ProductCard({ product }: { product: Product }) {
   ];
 
   return (
-    <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-850/60 transition-all duration-500 hover:-translate-y-1.5 hover:border-volt/35 hover:shadow-panel">
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-850/60 transition-[border-color,box-shadow] duration-500 hover:border-volt/35 hover:shadow-panel">
       {product.featured && (
         <span className="absolute left-5 top-5 z-10 rounded-full border border-volt/35 bg-volt/15 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-volt-200">
           Izdvajamo
@@ -150,13 +152,24 @@ function ProductCard({ product }: { product: Product }) {
   );
 }
 
+const INITIAL_COUNT = 6;
+
 export function Fleet() {
   const [active, setActive] = React.useState<CategoryId>("svi");
+  const [expanded, setExpanded] = React.useState(false);
 
-  const visible = React.useMemo(
+  const matching = React.useMemo(
     () => (active === "svi" ? products : products.filter((item) => item.category === active)),
     [active],
   );
+
+  const visible = expanded ? matching : matching.slice(0, INITIAL_COUNT);
+  const hidden = matching.length - visible.length;
+
+  const selectCategory = (id: CategoryId) => {
+    setActive(id);
+    setExpanded(false);
+  };
 
   return (
     <section id="agregati" className="section">
@@ -164,7 +177,10 @@ export function Fleet() {
         <Reveal className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <span className="eyebrow">Naša ponuda</span>
-            <h2 className="heading-lg mt-6">Agregati za svaku namenu</h2>
+            <TextReveal
+              className="heading-lg mt-6"
+              segments={[{ text: "Agregati za" }, { text: "svaku namenu", accent: true }]}
+            />
             <p className="mt-5 text-base leading-relaxed text-steel-400">
               Od tihih inverterskih modela do industrijskih dizel agregata sa automatikom.
             </p>
@@ -182,7 +198,7 @@ export function Fleet() {
                 <button
                   key={category.id}
                   type="button"
-                  onClick={() => setActive(category.id)}
+                  onClick={() => selectCategory(category.id)}
                   aria-pressed={isActive}
                   className={cn(
                     "relative shrink-0 rounded-full border px-4 py-2.5 text-sm font-semibold transition-colors duration-300",
@@ -217,11 +233,21 @@ export function Fleet() {
                 transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
                 className="min-w-0"
               >
-                <ProductCard product={product} />
+                <TiltCard className="h-full">
+                  <ProductCard product={product} />
+                </TiltCard>
               </motion.div>
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {hidden > 0 && (
+          <motion.div layout className="mt-8 flex justify-center">
+            <Button variant="glass" size="md" onClick={() => setExpanded(true)}>
+              Prikaži još {hidden}
+            </Button>
+          </motion.div>
+        )}
       </div>
     </section>
   );

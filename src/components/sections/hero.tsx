@@ -1,10 +1,11 @@
 "use client";
 
 import * as React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Gauge, Phone, ShieldCheck, Timer, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Magnetic } from "@/components/ui/magnetic";
+import { TextReveal } from "@/components/motion/text-reveal";
 import { site } from "@/config/site";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -16,11 +17,11 @@ const highlights = [
   { icon: Gauge, label: "Opseg snage", value: "2 – 350 kVA" },
 ];
 
-function HeroBackdrop() {
+function HeroBackdrop({ style }: { style?: React.ComponentProps<typeof motion.div>["style"] }) {
   const reduced = useReducedMotion();
 
   return (
-    <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <motion.div style={style} className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
       {reduced ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
@@ -48,19 +49,28 @@ function HeroBackdrop() {
       <div className="absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-950/25 to-ink-950" />
       <div className="absolute inset-0 bg-grid-lines bg-[size:64px_64px] opacity-25" />
       <div className="absolute left-1/2 top-1/3 h-[420px] w-[760px] max-w-[130vw] -translate-x-1/2 rounded-full bg-volt/[0.10] blur-[130px]" />
-    </div>
+    </motion.div>
   );
 }
 
 export function Hero() {
+  const ref = React.useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+
+  const backdropScale = useTransform(scrollYProgress, [0, 1], [1, 1.18]);
+  const backdropOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, 90]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+
   return (
     <section
+      ref={ref}
       id="top"
-      className="relative overflow-hidden pb-20 pt-32 sm:pb-24 sm:pt-36 lg:pb-28 lg:pt-44"
+      className="relative overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-40"
     >
-      <HeroBackdrop />
+      <HeroBackdrop style={{ scale: backdropScale, opacity: backdropOpacity }} />
 
-      <div className="container">
+      <motion.div style={{ y: contentY, opacity: contentOpacity }} className="container">
         <div className="mx-auto max-w-3xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -77,15 +87,15 @@ export function Hero() {
             </span>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.08, ease: EASE }}
+          <TextReveal
+            as="h1"
             className="heading-xl mt-7"
-          >
-            Neprekidna energija za{" "}
-            <span className="text-gradient-volt">vaš biznis i dom</span>
-          </motion.h1>
+            delay={0.1}
+            segments={[
+              { text: "Neprekidna energija za" },
+              { text: "vaš biznis i dom", accent: true },
+            ]}
+          />
 
           <motion.p
             initial={{ opacity: 0, y: 22 }}
@@ -138,7 +148,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: EASE }}
-          className="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4"
+          className="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4"
         >
           {highlights.map((item) => (
             <li
@@ -151,7 +161,7 @@ export function Hero() {
             </li>
           ))}
         </motion.ul>
-      </div>
+      </motion.div>
     </section>
   );
 }

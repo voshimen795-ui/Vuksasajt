@@ -9,7 +9,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-volt text-white shadow-volt-sm hover:bg-volt-500 hover:shadow-volt",
+          "btn-sheen overflow-hidden bg-volt text-white shadow-volt-sm hover:bg-volt-500 hover:shadow-volt",
         glass:
           "glass text-white hover:border-white/25 hover:bg-white/[0.08]",
         outline:
