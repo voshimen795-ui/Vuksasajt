@@ -8,8 +8,8 @@ export function Footer() {
     <footer className="relative border-t border-white/45 bg-ink-800">
       {/* donji razmak ostavlja mesta plutajućoj traci za poziv na mobilnom */}
       <div className="container pb-28 pt-16 sm:pb-16 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.7fr_0.7fr_1.1fr] lg:gap-10">
-          <div>
+        <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.7fr_0.7fr_1.1fr] lg:gap-10">
+          <div className="sm:order-1 lg:order-none">
             <Logo />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-steel-500">
               {site.legalName} — prodaja, iznajmljivanje i servis agregata i generatora struje
@@ -64,7 +64,7 @@ export function Footer() {
             </a>
           </div>
 
-          <nav aria-label="Meni">
+          <nav aria-label="Meni" className="sm:order-3 lg:order-none">
             <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-white">Meni</h2>
             <ul className="mt-5 space-y-3">
               {navLinks.map((link) => (
@@ -80,7 +80,7 @@ export function Footer() {
             </ul>
           </nav>
 
-          <nav aria-label="Usluge">
+          <nav aria-label="Usluge" className="sm:order-4 lg:order-none">
             <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-white">Usluge</h2>
             <ul className="mt-5 space-y-3">
               {serviceLinks.map((link) => (
@@ -96,7 +96,7 @@ export function Footer() {
             </ul>
           </nav>
 
-          <div>
+          <div className="sm:order-2 lg:order-none">
             <h2 className="text-xs font-bold uppercase tracking-[0.16em] text-white">Kontakt</h2>
 
             <a

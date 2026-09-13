@@ -51,7 +51,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               className={cn(
-                "link-swap rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-white/15",
+                "link-swap whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium transition-colors hover:bg-white/15 xl:px-4",
                 pathname === link.href ? "text-white" : "text-steel-400",
               )}
             >
@@ -64,13 +64,13 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <a
             href={site.phones.mobile.href}
-            className="hidden items-center gap-2 rounded-full border border-white/45 bg-white/[0.18] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:border-volt/60 hover:bg-volt/20 sm:inline-flex"
+            className="hidden items-center gap-2 whitespace-nowrap rounded-full border border-white/45 bg-white/[0.18] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:border-volt/60 hover:bg-volt/20 sm:inline-flex lg:hidden xl:inline-flex"
           >
             <Phone className="h-4 w-4 text-volt-400" />
             {site.phones.mobile.label}
           </a>
 
-          <Button asChild size="sm" className="hidden sm:inline-flex">
+          <Button asChild size="sm" className="hidden whitespace-nowrap sm:inline-flex">
             <Link href="/#ponuda">Zatražite ponudu</Link>
           </Button>
 
