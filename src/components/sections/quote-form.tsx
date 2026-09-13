@@ -12,8 +12,20 @@ import { site } from "@/config/site";
 import { buildMailto } from "@/lib/inquiry";
 import { cn } from "@/lib/utils";
 
-const serviceTypes = ["Kupovina", "Iznajmljivanje", "Servis / popravka", "ATS ormar"];
-const powerRanges = ["do 5 kVA", "5 – 15 kVA", "15 – 60 kVA", "60 – 150 kVA", "preko 150 kVA"];
+const serviceTypes = [
+  "Iznajmljivanje",
+  "Kupovina",
+  "Servis / popravka",
+  "Energetika za događaje",
+];
+const powerRanges = [
+  "do 5 kW",
+  "5 – 15 kW",
+  "15 – 30 kW",
+  "30 – 60 kW",
+  "60 – 150 kW",
+  "preko 150 kW",
+];
 const timelines = ["Hitno (24h)", "Ove nedelje", "Ovog meseca", "Samo se raspitujem"];
 
 const steps = ["Tip objekta", "Potrebna snaga", "Kontakt podaci"];
@@ -72,20 +84,23 @@ export function QuoteForm() {
     const tip = params.get("tip");
     const napomena = params.get("napomena");
     const kva = Number(params.get("kva"));
+    const kw = Number(params.get("kw")) || (kva > 0 ? kva * 0.8 : 0);
 
     if (tip && profiles.some((profile) => profile.label === tip)) setObjectType(tip);
     if (napomena) setNote(napomena);
-    if (kva > 0) {
+    if (kw > 0) {
       setPower(
-        kva <= 5
+        kw <= 5
           ? powerRanges[0]
-          : kva <= 15
+          : kw <= 15
             ? powerRanges[1]
-            : kva <= 60
+            : kw <= 30
               ? powerRanges[2]
-              : kva <= 150
+              : kw <= 60
                 ? powerRanges[3]
-                : powerRanges[4],
+                : kw <= 150
+                  ? powerRanges[4]
+                  : powerRanges[5],
       );
     }
   }, []);

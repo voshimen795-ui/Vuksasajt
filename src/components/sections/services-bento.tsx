@@ -1,36 +1,42 @@
 "use client";
 
 import * as React from "react";
-import {
-  ArrowUpRight,
-  CalendarClock,
-  PackageCheck,
-  ShieldAlert,
-  ToggleRight,
-} from "lucide-react";
+import { ArrowUpRight, Cable, CalendarClock, PackageCheck, ShieldAlert } from "lucide-react";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { TextReveal } from "@/components/motion/text-reveal";
 import { GeneratorArt } from "@/components/visuals/generator-art";
 import { cn } from "@/lib/utils";
 
+/**
+ * Raspored je namerno ovakav: iznajmljivanje je prvo i istaknuto, a prodaja
+ * zauzima najveći blok na desktopu. ATS se ne navodi posebno — ulazi u sklop
+ * isporuke i ugradnje.
+ */
 const services = [
+  {
+    icon: CalendarClock,
+    title: "Iznajmljivanje",
+    description:
+      "Od jednog dana do cele sezone, sa dostavom, priključenjem i preuzimanjem.",
+    points: ["Dnevni i mesečni najam", "Dostava i priključenje", "Zamena u slučaju kvara"],
+    art: "inverter" as const,
+    className: "lg:col-span-2",
+    highlight: true,
+  },
   {
     icon: PackageCheck,
     title: "Prodaja agregata",
     description:
-      "Novi i provereni polovni dizel i benzinski agregati, sa garancijom i puštanjem u rad.",
-    points: ["Novi i polovni", "Garancija do 2 godine", "Puštanje u rad"],
+      "Novi i provereni polovni dizel i benzinski agregati, sa garancijom, automatikom i puštanjem u rad.",
+    points: [
+      "Novi i polovni",
+      "Garancija do 2 godine",
+      "Automatika (ATS) po potrebi",
+      "Puštanje u rad",
+    ],
     art: "portable" as const,
-    className: "lg:col-span-2 lg:row-span-2",
+    className: "lg:col-span-4 lg:row-span-2",
     featured: true,
-  },
-  {
-    icon: CalendarClock,
-    title: "Iznajmljivanje",
-    description: "Od jednog dana do cele sezone, sa dostavom i priključenjem.",
-    points: ["Dnevni i mesečni najam", "Dostava i priključenje"],
-    art: "inverter" as const,
-    className: "lg:col-span-2",
   },
   {
     icon: ShieldAlert,
@@ -42,12 +48,13 @@ const services = [
     urgent: true,
   },
   {
-    icon: ToggleRight,
-    title: "Automatski ormari (ATS)",
-    description: "Automatika koja prebacuje napajanje na agregat za nekoliko sekundi.",
-    points: ["ATS / DEA", "Daljinski nadzor"],
+    icon: Cable,
+    title: "Energetika za događaje",
+    description:
+      "Kablovi, razvodni ormari i priključenje bine, rasvete i ugostiteljske opreme.",
+    points: ["Razvod i kablovi", "Priključenje bine i rasvete", "Dežurstvo na licu mesta"],
     art: "ats" as const,
-    className: "lg:col-span-4",
+    className: "lg:col-span-6",
   },
 ];
 
@@ -55,10 +62,12 @@ function SpotlightCard({
   children,
   className,
   featured,
+  highlight,
 }: {
   children: React.ReactNode;
   className?: string;
   featured?: boolean;
+  highlight?: boolean;
 }) {
   const ref = React.useRef<HTMLDivElement>(null);
 
@@ -76,7 +85,9 @@ function SpotlightCard({
       onMouseMove={handleMove}
       className={cn(
         "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/45 p-6 shadow-panel transition-all duration-500 hover:-translate-y-1 hover:border-volt/60 sm:p-8",
-        featured ? "bg-gradient-to-br from-volt/20 via-ink-800/75 to-ink-850/80" : "bg-ink-800",
+        featured && "bg-gradient-to-br from-volt/20 via-ink-800/75 to-ink-850/80",
+        highlight && "border-volt-400 bg-ink-800 ring-1 ring-volt-400/40",
+        !featured && !highlight && "bg-ink-800",
         className,
       )}
     >
@@ -117,7 +128,11 @@ export function ServicesBento() {
         <Stagger className="mt-14 grid gap-4 sm:gap-5 lg:grid-cols-6">
           {services.map((service) => (
             <StaggerItem key={service.title} className={cn("min-w-0", service.className)}>
-              <SpotlightCard featured={service.featured} className="h-full">
+              <SpotlightCard
+                featured={service.featured}
+                highlight={service.highlight}
+                className="h-full"
+              >
                 <div className="flex items-start justify-between gap-4">
                   <span
                     className={cn(
@@ -151,8 +166,8 @@ export function ServicesBento() {
                 </ul>
 
                 {service.featured && (
-                  <div className="pointer-events-none mt-auto hidden pt-10 opacity-70 transition-opacity duration-500 group-hover:opacity-100 lg:block">
-                    <GeneratorArt variant={service.art} className="h-44 w-full" />
+                  <div className="pointer-events-none mt-auto hidden items-center justify-center pt-8 opacity-70 transition-opacity duration-500 group-hover:opacity-100 lg:flex">
+                    <GeneratorArt variant={service.art} className="h-56 w-auto" />
                   </div>
                 )}
               </SpotlightCard>

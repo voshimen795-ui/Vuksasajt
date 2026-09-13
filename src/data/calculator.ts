@@ -1,4 +1,10 @@
-export type ProfileId = "domacinstvo" | "vikendica" | "gradiliste" | "poslovni" | "industrija";
+export type ProfileId =
+  | "domacinstvo"
+  | "vikendica"
+  | "gradiliste"
+  | "dogadjaji"
+  | "poslovni"
+  | "industrija";
 
 export type Profile = {
   id: ProfileId;
@@ -33,6 +39,14 @@ export const profiles: Profile[] = [
     baseKw: 9,
     minKw: 3,
     maxKw: 45,
+  },
+  {
+    id: "dogadjaji",
+    label: "Događaji",
+    blurb: "Bina, ozvučenje, rasveta i ugostiteljska oprema na otvorenom.",
+    baseKw: 15,
+    minKw: 3,
+    maxKw: 120,
   },
   {
     id: "poslovni",

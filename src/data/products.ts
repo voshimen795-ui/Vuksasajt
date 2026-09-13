@@ -21,6 +21,12 @@ export type Product = {
   warranty: string;
   start: string;
   useCase: string;
+  /** Napon i broj faza. */
+  phase?: string;
+  /** Zapremina rezervoara, npr. "15 l". */
+  tank?: string;
+  /** Autonomija pri ~75% opterećenja, npr. "8 h". */
+  runtime?: string;
   featured?: boolean;
 };
 
