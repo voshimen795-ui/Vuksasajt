@@ -135,7 +135,7 @@ export function QuoteForm() {
                   href={site.phones.mobile.href}
                   className="group flex items-center gap-4 rounded-2xl border border-white/[0.18] bg-white/[0.07] p-4 transition-colors duration-300 hover:border-volt/60"
                 >
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-volt/25 text-volt">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-volt/25 text-volt-400">
                     <Phone className="h-5 w-5" />
                   </span>
                   <span>

@@ -96,7 +96,7 @@ export function Footer() {
                   href={site.phones.office.href}
                   className="flex items-center gap-2.5 transition-colors hover:text-white"
                 >
-                  <Phone className="h-4 w-4 shrink-0 text-volt" />
+                  <Phone className="h-4 w-4 shrink-0 text-volt-400" />
                   {site.phones.office.label}
                 </a>
               </li>
@@ -105,7 +105,7 @@ export function Footer() {
                   href={`mailto:${site.email}`}
                   className="flex items-center gap-2.5 break-all transition-colors hover:text-white"
                 >
-                  <Mail className="h-4 w-4 shrink-0 text-volt" />
+                  <Mail className="h-4 w-4 shrink-0 text-volt-400" />
                   {site.email}
                 </a>
               </li>
@@ -116,7 +116,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-start gap-2.5 transition-colors hover:text-white"
                 >
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-volt" />
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-volt-400" />
                   <span>
                     {site.address.street}, {site.address.district}
                     <br />
@@ -155,7 +155,7 @@ export function Footer() {
             className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-volt/25 blur-3xl"
           />
           <span className="relative flex flex-col items-center gap-3 text-center">
-            <span className="relative flex h-12 w-12 items-center justify-center rounded-full border border-volt/55 bg-volt/25 text-volt">
+            <span className="relative flex h-12 w-12 items-center justify-center rounded-full border border-volt/55 bg-volt/25 text-volt-400">
               <MapPin className="h-5 w-5" />
               <span className="absolute inset-0 animate-pulse-ring rounded-full bg-volt/30" />
             </span>

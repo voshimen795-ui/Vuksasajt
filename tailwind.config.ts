@@ -18,14 +18,15 @@ const config: Config = {
           800: "#373744",
           700: "#484857",
         },
+        /* "volt" je zadržan kao ime akcenta, ali je sada tamnoplava iz logotipa */
         volt: {
-          DEFAULT: "#FF5500",
-          50: "#FFF3EB",
-          200: "#FFC7A3",
-          400: "#FF8A3D",
-          500: "#FF6B00",
-          600: "#FF5500",
-          700: "#E04600",
+          DEFAULT: "#3B50A1",
+          50: "#EDF1FB",
+          200: "#AFBCE6",
+          400: "#6E87D6",
+          500: "#4A62BE",
+          600: "#3B50A1",
+          700: "#2B3B78",
         },
         steel: {
           300: "#E6E9F0",
@@ -41,17 +42,17 @@ const config: Config = {
         "4xl": "2rem",
       },
       boxShadow: {
-        volt: "0 0 0 1px rgba(255,85,0,0.4), 0 20px 60px -10px rgba(255,85,0,0.6)",
-        "volt-sm": "0 12px 34px -10px rgba(255,85,0,0.7)",
+        volt: "0 0 0 1px rgba(110,135,214,0.45), 0 20px 60px -10px rgba(59,80,161,0.75)",
+        "volt-sm": "0 12px 34px -10px rgba(59,80,161,0.85)",
         panel: "0 28px 80px -34px rgba(0,0,0,0.85)",
         /* tvrda ivica koja daje "mašinski" utisak karticama */
-        hard: "6px 6px 0 0 rgba(255,85,0,0.22)",
+        hard: "6px 6px 0 0 rgba(59,80,161,0.3)",
       },
       backgroundImage: {
         "grid-lines":
           "linear-gradient(to right, rgba(255,255,255,0.09) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.09) 1px, transparent 1px)",
         "hazard-stripes":
-          "repeating-linear-gradient(135deg, rgba(255,85,0,0.55) 0 10px, transparent 10px 20px)",
+          "repeating-linear-gradient(135deg, rgba(110,135,214,0.75) 0 10px, transparent 10px 20px)",
       },
       keyframes: {
         "fade-up": {

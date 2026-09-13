@@ -78,7 +78,7 @@ export function TrustStats() {
             {reasons.map((reason) => (
               <StaggerItem key={reason.title}>
                 <div className="group h-full rounded-3xl border border-white/[0.18] bg-ink-800/65 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-volt/60 sm:p-7">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.18] bg-white/15 text-volt transition-colors duration-500 group-hover:border-volt/60 group-hover:bg-volt/20">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.18] bg-white/15 text-volt-400 transition-colors duration-500 group-hover:border-volt/60 group-hover:bg-volt/20">
                     <reason.icon className="h-5 w-5" />
                   </span>
                   <h3 className="mt-5 font-display text-lg font-bold text-white">{reason.title}</h3>

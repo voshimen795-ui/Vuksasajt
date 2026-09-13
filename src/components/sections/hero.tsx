@@ -6,6 +6,7 @@ import { ArrowRight, Gauge, Phone, ShieldCheck, Timer, Wrench } from "lucide-rea
 import { Button } from "@/components/ui/button";
 import { Magnetic } from "@/components/ui/magnetic";
 import { TextReveal } from "@/components/motion/text-reveal";
+import { LogoMark } from "@/components/layout/logo";
 import { site } from "@/config/site";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -49,7 +50,7 @@ function HeroBackdrop({ style }: { style?: React.ComponentProps<typeof motion.di
       <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-b from-ink-950/55 via-transparent to-ink-950" />
       <div className="absolute inset-0 bg-grid-lines bg-[size:64px_64px] opacity-30" />
-      <div className="absolute left-1/2 top-[28%] h-[520px] w-[900px] max-w-[135vw] -translate-x-1/2 rounded-full bg-volt/25 blur-[150px]" />
+      <div className="absolute left-1/2 top-[28%] h-[520px] w-[900px] max-w-[135vw] -translate-x-1/2 rounded-full bg-volt/[0.18] blur-[150px]" />
       <div className="absolute left-1/2 top-[22%] h-[360px] w-[620px] max-w-[120vw] -translate-x-1/2 rounded-full bg-sky-300/20 blur-[130px]" />
     </motion.div>
   );
@@ -77,14 +78,23 @@ export function Hero() {
           {/* mekana senka tačno ispod teksta — video ostaje svetao, natpis čitljiv */}
           <div
             aria-hidden
-            className="pointer-events-none absolute -inset-x-12 -inset-y-10 -z-10 rounded-[3rem] bg-[radial-gradient(closest-side,rgba(12,12,20,0.72),rgba(12,12,20,0.35)_62%,transparent)]"
+            className="pointer-events-none absolute -inset-x-12 -inset-y-10 -z-10 rounded-[3rem] bg-[radial-gradient(closest-side,rgba(10,10,18,0.82),rgba(10,10,18,0.45)_62%,transparent)]"
           />
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, ease: EASE }}
+            className="flex justify-center"
+          >
+            <LogoMark size={150} priority className="h-[132px] w-auto sm:h-[168px]" />
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: EASE }}
-            className="flex justify-center"
+            transition={{ duration: 0.6, delay: 0.08, ease: EASE }}
+            className="mt-7 flex justify-center"
           >
             <span className="eyebrow">
               <span className="relative flex h-2 w-2">
@@ -137,7 +147,7 @@ export function Hero() {
             <Magnetic className="w-full sm:w-auto">
               <Button asChild variant="glass" size="lg" className="w-full sm:w-auto">
                 <a href={site.phones.mobile.href}>
-                  <Phone className="h-4 w-4 text-volt" />
+                  <Phone className="h-4 w-4 text-volt-400" />
                   Pozovite odmah: {site.phones.mobile.label}
                 </a>
               </Button>

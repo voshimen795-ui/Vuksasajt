@@ -1,7 +1,7 @@
 import { Calculator, Headphones, PackageCheck, Wrench } from "lucide-react";
+import { LogoMark } from "@/components/layout/logo";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { TextReveal } from "@/components/motion/text-reveal";
-import { GeneratorArt } from "@/components/visuals/generator-art";
 import { site } from "@/config/site";
 
 const steps = [
@@ -60,7 +60,9 @@ export function AboutStory() {
                 aria-hidden
                 className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-volt/20 blur-[90px]"
               />
-              <GeneratorArt variant="industrial" className="relative h-52 w-full" />
+              <div className="relative flex justify-center">
+                <LogoMark size={220} className="h-52 w-auto" />
+              </div>
               <p className="relative mt-6 font-display text-lg font-bold text-white">
                 Od 2 kVA do industrijskih postrojenja
               </p>
@@ -84,7 +86,7 @@ export function AboutStory() {
               <StaggerItem key={step.title}>
                 <div className="group h-full rounded-3xl border border-white/[0.18] bg-ink-800/65 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-volt/60">
                   <div className="flex items-center justify-between">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.18] bg-white/15 text-volt transition-colors duration-500 group-hover:border-volt/60 group-hover:bg-volt/20">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.18] bg-white/15 text-volt-400 transition-colors duration-500 group-hover:border-volt/60 group-hover:bg-volt/20">
                       <step.icon className="h-5 w-5" />
                     </span>
                     <span className="font-display text-sm font-bold text-steel-500">

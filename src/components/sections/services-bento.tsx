@@ -85,7 +85,7 @@ function SpotlightCard({
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         style={{
           background:
-            "radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255,85,0,0.14), transparent 65%)",
+            "radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(74,98,190,0.28), transparent 65%)",
         }}
       />
       <div className="relative flex h-full flex-col">{children}</div>
@@ -123,13 +123,13 @@ export function ServicesBento() {
                     className={cn(
                       "inline-flex h-12 w-12 items-center justify-center rounded-2xl border transition-colors duration-500",
                       service.urgent
-                        ? "border-volt/60 bg-volt/25 text-volt"
+                        ? "border-volt/60 bg-volt/25 text-volt-400"
                         : "border-white/[0.18] bg-white/15 text-volt-400 group-hover:border-volt/60",
                     )}
                   >
                     <service.icon className="h-6 w-6" />
                   </span>
-                  <ArrowUpRight className="h-5 w-5 text-steel-500 transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-volt" />
+                  <ArrowUpRight className="h-5 w-5 text-steel-500 transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-volt-200" />
                 </div>
 
                 <h3 className="mt-6 font-display text-xl font-extrabold uppercase tracking-tight text-white sm:text-2xl">

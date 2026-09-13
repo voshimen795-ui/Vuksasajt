@@ -10,7 +10,7 @@ export function ScrollProgress() {
     <motion.div
       aria-hidden
       style={{ scaleX }}
-      className="fixed inset-x-0 top-0 z-50 h-0.5 origin-left bg-gradient-to-r from-volt-500 via-volt to-volt-400 shadow-[0_0_12px_rgba(255,85,0,0.8)]"
+      className="fixed inset-x-0 top-0 z-50 h-0.5 origin-left bg-gradient-to-r from-volt-500 via-volt to-volt-400 shadow-[0_0_12px_rgba(74,98,190,0.9)]"
     />
   );
 }
