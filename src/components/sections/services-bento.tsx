@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { ArrowUpRight, Cable, CalendarClock, PackageCheck, ShieldAlert } from "lucide-react";
+import { Cable, CalendarClock, PackageCheck, ShieldAlert } from "lucide-react";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { TextReveal } from "@/components/motion/text-reveal";
 import { GeneratorArt } from "@/components/visuals/generator-art";
@@ -18,7 +18,7 @@ const services = [
     title: "Iznajmljivanje",
     description:
       "Od jednog dana do cele sezone, sa dostavom, priključenjem i preuzimanjem.",
-    points: ["Dnevni i mesečni najam", "Dostava i priključenje", "Zamena u slučaju kvara"],
+    points: ["Dnevni i mesečni najam", "Dostava i priključenje"],
     art: "inverter" as const,
     className: "lg:col-span-2",
     highlight: true,
@@ -28,12 +28,7 @@ const services = [
     title: "Prodaja agregata",
     description:
       "Novi i provereni polovni dizel i benzinski agregati, sa garancijom, automatikom i puštanjem u rad.",
-    points: [
-      "Novi i polovni",
-      "Garancija do 2 godine",
-      "Automatika (ATS) po potrebi",
-      "Puštanje u rad",
-    ],
+    points: ["Novi i polovni", "Garancija do 2 godine", "Automatika i puštanje u rad"],
     art: "portable" as const,
     className: "lg:col-span-4 lg:row-span-2",
     featured: true,
@@ -52,7 +47,7 @@ const services = [
     title: "Energetika za događaje",
     description:
       "Kablovi, razvodni ormari i priključenje bine, rasvete i ugostiteljske opreme.",
-    points: ["Razvod i kablovi", "Priključenje bine i rasvete", "Dežurstvo na licu mesta"],
+    points: ["Razvod i kablovi", "Dežurstvo na licu mesta"],
     art: "ats" as const,
     className: "lg:col-span-6",
   },
@@ -117,9 +112,6 @@ export function ServicesBento() {
               { text: "na jednom mestu", accent: true },
             ]}
           />
-          <div className="mt-6 flex justify-center">
-            <span className="rule-hazard" />
-          </div>
           <p className="mt-5 text-base leading-relaxed text-steel-400">
             Od izbora i montaže do održavanja i hitnog izlaska na teren.
           </p>
@@ -144,10 +136,9 @@ export function ServicesBento() {
                   >
                     <service.icon className="h-6 w-6" />
                   </span>
-                  <ArrowUpRight className="h-5 w-5 text-steel-500 transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-volt-200" />
                 </div>
 
-                <h3 className="mt-6 font-display text-xl font-extrabold uppercase tracking-tight text-white sm:text-2xl">
+                <h3 className="mt-6 font-display text-xl font-bold text-white sm:text-2xl">
                   {service.title}
                 </h3>
                 <p className="mt-3 max-w-md text-[15px] leading-relaxed text-steel-400">
@@ -166,7 +157,7 @@ export function ServicesBento() {
                 </ul>
 
                 {service.featured && (
-                  <div className="pointer-events-none mt-auto hidden items-center justify-center pt-8 opacity-70 transition-opacity duration-500 group-hover:opacity-100 lg:flex">
+                  <div className="pointer-events-none hidden flex-1 items-center justify-center pt-8 opacity-70 transition-opacity duration-500 group-hover:opacity-100 lg:flex">
                     <GeneratorArt variant={service.art} className="h-56 w-auto" />
                   </div>
                 )}

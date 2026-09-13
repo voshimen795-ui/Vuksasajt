@@ -145,11 +145,6 @@
       drop-shadow(0 10px 34px rgba(8, 8, 14, 0.55));
   }
 
-  /* industrijska traka — razdvaja blokove i daje "mašinski" ton */
-  .rule-hazard {
-    @apply h-2 w-32 rounded-sm bg-volt/25 bg-hazard-stripes ring-1 ring-volt/40;
-  }
-
   .mask-fade-b {
     mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
   }

@@ -139,50 +139,38 @@ export function QuoteForm() {
               className="heading-lg mt-6"
               segments={[{ text: "Ponuda na osnovu" }, { text: "vaših stvarnih potreba", accent: true }]}
             />
-            <span className="rule-hazard mt-6 block" />
             <p className="mt-5 text-base leading-relaxed text-steel-400">
               Tri kratka koraka do konkretne cene, bez skrivenih troškova.
             </p>
 
             <ul className="mt-10 space-y-3">
-              <li>
-                <a
-                  href={site.phones.mobile.href}
-                  className="group flex items-center gap-4 rounded-2xl border border-white/45 bg-white/[0.12] p-4 transition-colors duration-300 hover:border-volt/60"
-                >
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-volt/25 text-volt-400">
-                    <Phone className="h-5 w-5" />
-                  </span>
-                  <span>
-                    <span className="block text-xs uppercase tracking-[0.14em] text-steel-500">
-                      Hitno / mobilni
-                    </span>
-                    <span className="block font-semibold text-white">{site.phones.mobile.label}</span>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={site.phones.office.href}
-                  className="group flex items-center gap-4 rounded-2xl border border-white/45 bg-white/[0.12] p-4 transition-colors duration-300 hover:border-volt/60"
-                >
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 text-volt-400">
-                    <Phone className="h-5 w-5" />
-                  </span>
-                  <span>
-                    <span className="block text-xs uppercase tracking-[0.14em] text-steel-500">
-                      Kancelarija
-                    </span>
-                    <span className="block font-semibold text-white">{site.phones.office.label}</span>
-                  </span>
-                </a>
+              <li className="rounded-2xl border border-white/45 bg-white/[0.12] p-4">
+                <span className="block text-xs uppercase tracking-[0.14em] text-steel-500">
+                  Telefon
+                </span>
+                <div className="mt-2 flex flex-wrap items-center gap-x-5 gap-y-1">
+                  <a
+                    href={site.phones.mobile.href}
+                    className="inline-flex items-center gap-2 font-semibold text-white transition-colors hover:text-volt-200"
+                  >
+                    <Phone className="h-4 w-4 text-volt-400" />
+                    {site.phones.mobile.label}
+                    <span className="text-xs font-medium text-steel-500">hitno 24/7</span>
+                  </a>
+                  <a
+                    href={site.phones.office.href}
+                    className="text-sm text-steel-400 transition-colors hover:text-white"
+                  >
+                    {site.phones.office.label}
+                  </a>
+                </div>
               </li>
               <li>
                 <a
                   href={`mailto:${site.email}`}
-                  className="group flex items-center gap-4 rounded-2xl border border-white/45 bg-white/[0.12] p-4 transition-colors duration-300 hover:border-volt/60"
+                  className="flex items-center gap-4 rounded-2xl border border-white/45 bg-white/[0.12] p-4 transition-colors duration-300 hover:border-volt/60"
                 >
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 text-volt-400">
+                  <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/15 text-volt-400">
                     <Mail className="h-5 w-5" />
                   </span>
                   <span className="min-w-0">
@@ -194,7 +182,7 @@ export function QuoteForm() {
                 </a>
               </li>
               <li className="flex items-center gap-4 rounded-2xl border border-white/45 bg-white/[0.12] p-4">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 text-volt-400">
+                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/15 text-volt-400">
                   <MapPin className="h-5 w-5" />
                 </span>
                 <span>
@@ -255,7 +243,7 @@ export function QuoteForm() {
                     ))}
                   </div>
 
-                  <div className="mt-8 min-h-[340px]">
+                  <div className="mt-8 min-h-[260px]">
                     <AnimatePresence mode="wait">
                       <motion.div
                         key={step}

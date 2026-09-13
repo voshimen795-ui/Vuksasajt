@@ -51,8 +51,6 @@ const config: Config = {
       backgroundImage: {
         "grid-lines":
           "linear-gradient(to right, rgba(255,255,255,0.09) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.09) 1px, transparent 1px)",
-        "hazard-stripes":
-          "repeating-linear-gradient(135deg, rgba(110,135,214,0.75) 0 10px, transparent 10px 20px)",
       },
       keyframes: {
         "fade-up": {
