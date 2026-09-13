@@ -52,13 +52,12 @@ export const profiles: Profile[] = [
   },
 ];
 
-export type LoadId = "klima" | "motor" | "grejanje" | "pumpa" | "it";
+export type LoadId = "klima" | "motor" | "grejanje" | "it";
 
 export const heavyLoads: { id: LoadId; label: string; kw: number; surge: number }[] = [
   { id: "klima", label: "Klima uređaji", kw: 3, surge: 2.4 },
   { id: "motor", label: "Elektromotori / kompresor", kw: 5, surge: 3 },
   { id: "grejanje", label: "Grejanje / bojler", kw: 4, surge: 1.1 },
-  { id: "pumpa", label: "Vodena pumpa", kw: 2.2, surge: 2.6 },
   { id: "it", label: "Serveri / osetljiva elektronika", kw: 2, surge: 1.2 },
 ];
 

@@ -11,7 +11,7 @@ const faqs = [
   {
     question: "Kako da znam koliki mi agregat treba?",
     answer:
-      "Saberite potrošače koji rade istovremeno i dodajte rezervu za one sa jakim startom (klima, pumpa, motor). Kalkulator to radi umesto vas, a mi proračun proveravamo besplatno.",
+      "Saberite potrošače koji rade istovremeno i dodajte rezervu za one sa jakim startom (klima, kompresor, motor). Kalkulator to radi umesto vas, a mi proračun proveravamo besplatno.",
   },
   {
     question: "Benzinski ili dizel?",

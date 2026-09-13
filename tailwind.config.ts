@@ -12,11 +12,11 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          950: "#09090B",
-          900: "#0C0C0F",
-          850: "#121215",
-          800: "#18181C",
-          700: "#232329",
+          950: "#1A1A24",
+          900: "#23232E",
+          850: "#2C2C38",
+          800: "#373744",
+          700: "#484857",
         },
         volt: {
           DEFAULT: "#FF5500",
@@ -28,9 +28,9 @@ const config: Config = {
           700: "#E04600",
         },
         steel: {
-          300: "#C7CBD4",
-          400: "#9BA1AD",
-          500: "#767C88",
+          300: "#E6E9F0",
+          400: "#C2C8D4",
+          500: "#98A0AF",
         },
       },
       fontFamily: {
@@ -41,13 +41,17 @@ const config: Config = {
         "4xl": "2rem",
       },
       boxShadow: {
-        volt: "0 0 0 1px rgba(255,85,0,0.25), 0 18px 50px -12px rgba(255,85,0,0.45)",
-        "volt-sm": "0 10px 30px -12px rgba(255,85,0,0.55)",
-        panel: "0 24px 70px -30px rgba(0,0,0,0.9)",
+        volt: "0 0 0 1px rgba(255,85,0,0.4), 0 20px 60px -10px rgba(255,85,0,0.6)",
+        "volt-sm": "0 12px 34px -10px rgba(255,85,0,0.7)",
+        panel: "0 28px 80px -34px rgba(0,0,0,0.85)",
+        /* tvrda ivica koja daje "mašinski" utisak karticama */
+        hard: "6px 6px 0 0 rgba(255,85,0,0.22)",
       },
       backgroundImage: {
         "grid-lines":
-          "linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px)",
+          "linear-gradient(to right, rgba(255,255,255,0.09) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.09) 1px, transparent 1px)",
+        "hazard-stripes":
+          "repeating-linear-gradient(135deg, rgba(255,85,0,0.55) 0 10px, transparent 10px 20px)",
       },
       keyframes: {
         "fade-up": {

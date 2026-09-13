@@ -106,15 +106,4 @@ export const projects: Project[] = [
     objectType: "Dežurstvo 24/7",
     art: "industrial",
   },
-  {
-    slug: "pumpe-navodnjavanje",
-    title: "Pumpe za navodnjavanje",
-    category: "ugradnja",
-    summary:
-      "Motorne pumpe sa proračunom protoka i visine dizanja prema terenu.",
-    scope: ["Izbor pumpe", "Isporuka", "Obuka za rukovanje"],
-    power: "600 – 1000 l/min",
-    objectType: "Poljoprivredno gazdinstvo",
-    art: "pump",
-  },
 ];

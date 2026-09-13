@@ -4,7 +4,6 @@ import * as React from "react";
 import {
   ArrowUpRight,
   CalendarClock,
-  Droplets,
   PackageCheck,
   ShieldAlert,
   ToggleRight,
@@ -48,15 +47,7 @@ const services = [
     description: "Automatika koja prebacuje napajanje na agregat za nekoliko sekundi.",
     points: ["ATS / DEA", "Daljinski nadzor"],
     art: "ats" as const,
-    className: "lg:col-span-2",
-  },
-  {
-    icon: Droplets,
-    title: "Vodene pumpe",
-    description: "Motorne pumpe za navodnjavanje, gradilišta i ispumpavanje.",
-    points: ["2″ i 3″", "Servis i delovi"],
-    art: "pump" as const,
-    className: "lg:col-span-2",
+    className: "lg:col-span-4",
   },
 ];
 
@@ -84,8 +75,8 @@ function SpotlightCard({
       ref={ref}
       onMouseMove={handleMove}
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-volt/35 sm:p-8",
-        featured ? "bg-gradient-to-br from-volt/[0.09] via-ink-850/80 to-ink-900" : "bg-ink-850/60",
+        "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/[0.18] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-volt/60 sm:p-8",
+        featured ? "bg-gradient-to-br from-volt/20 via-ink-800/75 to-ink-850/80" : "bg-ink-800/65",
         className,
       )}
     >
@@ -115,6 +106,9 @@ export function ServicesBento() {
               { text: "na jednom mestu", accent: true },
             ]}
           />
+          <div className="mt-6 flex justify-center">
+            <span className="rule-hazard" />
+          </div>
           <p className="mt-5 text-base leading-relaxed text-steel-400">
             Od izbora i montaže do održavanja i hitnog izlaska na teren.
           </p>
@@ -129,8 +123,8 @@ export function ServicesBento() {
                     className={cn(
                       "inline-flex h-12 w-12 items-center justify-center rounded-2xl border transition-colors duration-500",
                       service.urgent
-                        ? "border-volt/40 bg-volt/15 text-volt"
-                        : "border-white/10 bg-white/5 text-volt-400 group-hover:border-volt/30",
+                        ? "border-volt/60 bg-volt/25 text-volt"
+                        : "border-white/[0.18] bg-white/15 text-volt-400 group-hover:border-volt/60",
                     )}
                   >
                     <service.icon className="h-6 w-6" />
@@ -138,7 +132,7 @@ export function ServicesBento() {
                   <ArrowUpRight className="h-5 w-5 text-steel-500 transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-volt" />
                 </div>
 
-                <h3 className="mt-6 font-display text-xl font-bold text-white sm:text-2xl">
+                <h3 className="mt-6 font-display text-xl font-extrabold uppercase tracking-tight text-white sm:text-2xl">
                   {service.title}
                 </h3>
                 <p className="mt-3 max-w-md text-[15px] leading-relaxed text-steel-400">
@@ -149,7 +143,7 @@ export function ServicesBento() {
                   {service.points.map((point) => (
                     <li
                       key={point}
-                      className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-steel-300"
+                      className="rounded-full border border-white/[0.18] bg-white/[0.13] px-3 py-1.5 text-xs font-medium text-steel-300"
                     >
                       {point}
                     </li>

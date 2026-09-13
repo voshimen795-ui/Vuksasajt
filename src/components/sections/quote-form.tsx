@@ -40,8 +40,8 @@ function ChipGroup({
             className={cn(
               "rounded-full border px-4 py-2.5 text-sm font-semibold transition-all duration-300",
               active
-                ? "border-volt/50 bg-volt/15 text-white shadow-volt-sm"
-                : "border-white/10 bg-white/[0.03] text-steel-400 hover:border-white/25 hover:text-white",
+                ? "border-volt/50 bg-volt/25 text-white shadow-volt-sm"
+                : "border-white/[0.18] bg-white/[0.07] text-steel-400 hover:border-white/40 hover:text-white",
             )}
           >
             {option}
@@ -124,6 +124,7 @@ export function QuoteForm() {
               className="heading-lg mt-6"
               segments={[{ text: "Ponuda na osnovu" }, { text: "vaših stvarnih potreba", accent: true }]}
             />
+            <span className="rule-hazard mt-6 block" />
             <p className="mt-5 text-base leading-relaxed text-steel-400">
               Tri kratka koraka do konkretne cene, bez skrivenih troškova.
             </p>
@@ -132,9 +133,9 @@ export function QuoteForm() {
               <li>
                 <a
                   href={site.phones.mobile.href}
-                  className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition-colors duration-300 hover:border-volt/35"
+                  className="group flex items-center gap-4 rounded-2xl border border-white/[0.18] bg-white/[0.07] p-4 transition-colors duration-300 hover:border-volt/60"
                 >
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-volt/15 text-volt">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-volt/25 text-volt">
                     <Phone className="h-5 w-5" />
                   </span>
                   <span>
@@ -148,9 +149,9 @@ export function QuoteForm() {
               <li>
                 <a
                   href={site.phones.office.href}
-                  className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition-colors duration-300 hover:border-volt/35"
+                  className="group flex items-center gap-4 rounded-2xl border border-white/[0.18] bg-white/[0.07] p-4 transition-colors duration-300 hover:border-volt/60"
                 >
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-volt-400">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 text-volt-400">
                     <Phone className="h-5 w-5" />
                   </span>
                   <span>
@@ -164,9 +165,9 @@ export function QuoteForm() {
               <li>
                 <a
                   href={`mailto:${site.email}`}
-                  className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition-colors duration-300 hover:border-volt/35"
+                  className="group flex items-center gap-4 rounded-2xl border border-white/[0.18] bg-white/[0.07] p-4 transition-colors duration-300 hover:border-volt/60"
                 >
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-volt-400">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 text-volt-400">
                     <Mail className="h-5 w-5" />
                   </span>
                   <span className="min-w-0">
@@ -177,8 +178,8 @@ export function QuoteForm() {
                   </span>
                 </a>
               </li>
-              <li className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-volt-400">
+              <li className="flex items-center gap-4 rounded-2xl border border-white/[0.18] bg-white/[0.07] p-4">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 text-volt-400">
                   <MapPin className="h-5 w-5" />
                 </span>
                 <span>
@@ -219,7 +220,7 @@ export function QuoteForm() {
                   <div className="flex items-center gap-3">
                     {steps.map((label, index) => (
                       <div key={label} className="flex flex-1 flex-col gap-2">
-                        <div className="h-1 overflow-hidden rounded-full bg-white/10">
+                        <div className="h-1 overflow-hidden rounded-full bg-white/15">
                           <motion.div
                             initial={false}
                             animate={{ width: index <= step ? "100%" : "0%" }}
@@ -354,7 +355,7 @@ export function QuoteForm() {
                     </AnimatePresence>
                   </div>
 
-                  <div className="mt-8 flex items-center gap-3 border-t border-white/10 pt-6">
+                  <div className="mt-8 flex items-center gap-3 border-t border-white/[0.18] pt-6">
                     {step > 0 && (
                       <Button
                         type="button"

@@ -60,7 +60,7 @@ export function TrustStats() {
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-colors duration-500 hover:border-volt/30"
+                  className="rounded-2xl border border-white/[0.18] bg-white/[0.07] p-5 transition-colors duration-500 hover:border-volt/60"
                 >
                   <dt className="font-display text-3xl font-extrabold text-gradient-volt sm:text-4xl">
                     <CountUp to={stat.value} />
@@ -77,8 +77,8 @@ export function TrustStats() {
           <Stagger className="grid gap-4 sm:grid-cols-2">
             {reasons.map((reason) => (
               <StaggerItem key={reason.title}>
-                <div className="group h-full rounded-3xl border border-white/10 bg-ink-850/60 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-volt/30 sm:p-7">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-volt transition-colors duration-500 group-hover:border-volt/35 group-hover:bg-volt/10">
+                <div className="group h-full rounded-3xl border border-white/[0.18] bg-ink-800/65 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-volt/60 sm:p-7">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.18] bg-white/15 text-volt transition-colors duration-500 group-hover:border-volt/60 group-hover:bg-volt/20">
                     <reason.icon className="h-5 w-5" />
                   </span>
                   <h3 className="mt-5 font-display text-lg font-bold text-white">{reason.title}</h3>
@@ -98,7 +98,7 @@ export function TrustStats() {
               {[...sectors, ...sectors].map((sector, index) => (
                 <span
                   key={`${sector}-${index}`}
-                  className="whitespace-nowrap rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-steel-500 transition-colors duration-300 hover:border-volt/30 hover:text-white"
+                  className="whitespace-nowrap rounded-full border border-white/[0.18] bg-white/[0.07] px-5 py-2.5 text-sm font-medium text-steel-500 transition-colors duration-300 hover:border-volt/60 hover:text-white"
                 >
                   {sector}
                 </span>

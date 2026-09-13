@@ -11,10 +11,10 @@ const buttonVariants = cva(
         primary:
           "btn-sheen overflow-hidden bg-volt text-white shadow-volt-sm hover:bg-volt-500 hover:shadow-volt",
         glass:
-          "glass text-white hover:border-white/25 hover:bg-white/[0.08]",
+          "glass text-white hover:border-white/40 hover:bg-white/[0.13]",
         outline:
-          "border border-volt/40 text-volt-400 hover:border-volt hover:bg-volt/10 hover:text-volt-200",
-        ghost: "text-steel-300 hover:bg-white/5 hover:text-white",
+          "border border-volt/60 text-volt-400 hover:border-volt hover:bg-volt/20 hover:text-volt-200",
+        ghost: "text-steel-300 hover:bg-white/15 hover:text-white",
       },
       size: {
         sm: "h-10 px-4 text-sm",

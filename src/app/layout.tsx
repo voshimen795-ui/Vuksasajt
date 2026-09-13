@@ -35,7 +35,6 @@ export const metadata: Metadata = {
     "iznajmljivanje agregata",
     "servis agregata",
     "ATS ormari",
-    "vodene pumpe",
     "Beograd",
     "Srbija",
   ],
@@ -52,7 +51,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#09090B",
+  themeColor: "#1A1A24",
   colorScheme: "dark",
 };
 

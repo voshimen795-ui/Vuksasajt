@@ -50,10 +50,10 @@ function InquiryDialog({ product }: { product: Product }) {
         </DialogDescription>
 
         <div className="mt-6 grid grid-cols-2 gap-2 text-xs">
-          <span className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-steel-300">
+          <span className="rounded-lg border border-white/[0.18] bg-white/[0.07] px-3 py-2 text-steel-300">
             {product.power}
           </span>
-          <span className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-steel-300">
+          <span className="rounded-lg border border-white/[0.18] bg-white/[0.07] px-3 py-2 text-steel-300">
             {product.fuel}
           </span>
         </div>
@@ -108,15 +108,15 @@ function ProductCard({ product }: { product: Product }) {
   ];
 
   return (
-    <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-850/60 transition-[border-color,box-shadow] duration-500 hover:border-volt/35 hover:shadow-panel">
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/[0.18] bg-ink-800/65 transition-[border-color,box-shadow] duration-500 hover:border-volt/60 hover:shadow-panel">
       {product.featured && (
-        <span className="absolute left-5 top-5 z-10 rounded-full border border-volt/35 bg-volt/15 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-volt-200">
+        <span className="absolute left-5 top-5 z-10 rounded-full border border-volt/55 bg-volt/25 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-volt-200">
           Izdvajamo
         </span>
       )}
 
-      <div className="relative flex h-44 items-center justify-center overflow-hidden border-b border-white/10 bg-gradient-to-b from-white/[0.05] to-transparent">
-        <div className="absolute inset-x-8 bottom-0 h-24 rounded-full bg-volt/10 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      <div className="relative flex h-44 items-center justify-center overflow-hidden border-b border-white/[0.18] bg-gradient-to-b from-white/[0.05] to-transparent">
+        <div className="absolute inset-x-8 bottom-0 h-24 rounded-full bg-volt/20 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
         <GeneratorArt
           variant={product.art}
           className="relative h-32 w-auto transition-transform duration-500 group-hover:scale-105"
@@ -124,14 +124,16 @@ function ProductCard({ product }: { product: Product }) {
       </div>
 
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-display text-lg font-bold text-white">{product.name}</h3>
+        <h3 className="font-display text-lg font-extrabold uppercase tracking-tight text-white">
+          {product.name}
+        </h3>
         <p className="mt-2 text-sm leading-relaxed text-steel-500">{product.useCase}</p>
 
         <ul className="mt-5 grid grid-cols-2 gap-2">
           {specs.map((spec) => (
             <li
               key={spec.label}
-              className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-2 text-[11px] font-medium text-steel-300"
+              className="flex items-center gap-2 rounded-lg border border-white/[0.18] bg-white/[0.07] px-2.5 py-2 text-[11px] font-medium text-steel-300"
             >
               <spec.icon className="h-3.5 w-3.5 shrink-0 text-volt" />
               <span className="truncate">{spec.label}</span>
@@ -181,6 +183,7 @@ export function Fleet() {
               className="heading-lg mt-6"
               segments={[{ text: "Agregati za" }, { text: "svaku namenu", accent: true }]}
             />
+            <span className="rule-hazard mt-6 block" />
             <p className="mt-5 text-base leading-relaxed text-steel-400">
               Od tihih inverterskih modela do industrijskih dizel agregata sa automatikom.
             </p>
@@ -204,14 +207,14 @@ export function Fleet() {
                     "relative shrink-0 rounded-full border px-4 py-2.5 text-sm font-semibold transition-colors duration-300",
                     isActive
                       ? "border-transparent text-white"
-                      : "border-white/10 bg-white/[0.03] text-steel-400 hover:border-white/25 hover:text-white",
+                      : "border-white/[0.18] bg-white/[0.07] text-steel-400 hover:border-white/40 hover:text-white",
                   )}
                 >
                   {isActive && (
                     <motion.span
                       layoutId="fleet-pill"
                       transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                      className="absolute inset-0 -z-10 rounded-full border border-volt/50 bg-volt/15 shadow-volt-sm"
+                      className="absolute inset-0 -z-10 rounded-full border border-volt/50 bg-volt/25 shadow-volt-sm"
                     />
                   )}
                   {category.label}

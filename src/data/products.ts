@@ -1,6 +1,6 @@
 import type { ArtVariant } from "@/components/visuals/generator-art";
 
-export type CategoryId = "svi" | "benzinski" | "dizel" | "inverterski" | "industrijski" | "pumpe";
+export type CategoryId = "svi" | "benzinski" | "dizel" | "inverterski" | "industrijski";
 
 export const categories: { id: CategoryId; label: string }[] = [
   { id: "svi", label: "Svi" },
@@ -8,7 +8,6 @@ export const categories: { id: CategoryId; label: string }[] = [
   { id: "dizel", label: "Dizel" },
   { id: "inverterski", label: "Tih / Inverterski" },
   { id: "industrijski", label: "Industrijski" },
-  { id: "pumpe", label: "Vodene pumpe" },
 ];
 
 export type Product = {
@@ -128,30 +127,6 @@ export const products: Product[] = [
     warranty: "2 godine",
     start: "Automatski (ATS)",
     useCase: "Industrija, data centar, bolnica",
-  },
-  {
-    slug: "pumpa-2-cola",
-    name: "Vodena pumpa 2″",
-    category: "pumpe",
-    art: "pump",
-    power: "600 l/min",
-    fuel: "Benzin",
-    noise: "~ 70 dB",
-    warranty: "2 godine",
-    start: "Ručno paljenje",
-    useCase: "Navodnjavanje, ispumpavanje",
-  },
-  {
-    slug: "pumpa-3-cola",
-    name: "Vodena pumpa 3″",
-    category: "pumpe",
-    art: "pump",
-    power: "1000 l/min",
-    fuel: "Benzin",
-    noise: "~ 72 dB",
-    warranty: "2 godine",
-    start: "Ručno paljenje",
-    useCase: "Gradilište, poplavljeni prostor",
   },
 ];
 

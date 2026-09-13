@@ -1,10 +1,10 @@
 import { cn } from "@/lib/utils";
 
-export type ArtVariant = "portable" | "inverter" | "industrial" | "pump" | "ats";
+export type ArtVariant = "portable" | "inverter" | "industrial" | "ats";
 
-const stroke = "rgba(255,255,255,0.55)";
+const stroke = "rgba(255,255,255,0.8)";
 const accent = "#FF5500";
-const faint = "rgba(255,255,255,0.16)";
+const faint = "rgba(255,255,255,0.22)";
 
 function Portable() {
   return (
@@ -49,20 +49,6 @@ function Industrial() {
   );
 }
 
-function Pump() {
-  return (
-    <>
-      <circle cx="74" cy="76" r="30" fill={faint} stroke={stroke} strokeWidth="1.5" />
-      <circle cx="74" cy="76" r="12" fill="none" stroke={accent} strokeWidth="2" />
-      <path d="M74 64a12 12 0 0 1 12 12" stroke={accent} strokeWidth="3" strokeLinecap="round" fill="none" />
-      <rect x="104" y="58" width="32" height="24" rx="5" fill="none" stroke={stroke} strokeWidth="1.5" />
-      <path d="M44 76H24a6 6 0 0 0-6 6v14" fill="none" stroke={stroke} strokeWidth="2" strokeLinecap="round" />
-      <path d="M40 112h72" stroke={stroke} strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M120 82v20" stroke={accent} strokeWidth="2" strokeLinecap="round" opacity="0.7" />
-    </>
-  );
-}
-
 function Ats() {
   return (
     <>
@@ -80,7 +66,6 @@ const variants: Record<ArtVariant, () => JSX.Element> = {
   portable: Portable,
   inverter: Inverter,
   industrial: Industrial,
-  pump: Pump,
   ats: Ats,
 };
 

@@ -27,7 +27,7 @@ function HeroBackdrop({ style }: { style?: React.ComponentProps<typeof motion.di
         <img
           src="/video/hero-poster.jpg"
           alt=""
-          className="h-full w-full object-cover opacity-70"
+          className="h-full w-full scale-105 object-cover brightness-125 saturate-125"
         />
       ) : (
         <video
@@ -35,20 +35,22 @@ function HeroBackdrop({ style }: { style?: React.ComponentProps<typeof motion.di
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           poster="/video/hero-poster.jpg"
           aria-hidden
-          className="h-full w-full object-cover opacity-80"
+          className="h-full w-full scale-105 object-cover brightness-125 saturate-125"
         >
           <source src="/video/hero.webm" type="video/webm" />
           <source src="/video/hero.mp4" type="video/mp4" />
         </video>
       )}
 
-      <div className="absolute inset-0 bg-ink-950/45" />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-950/25 to-ink-950" />
-      <div className="absolute inset-0 bg-grid-lines bg-[size:64px_64px] opacity-25" />
-      <div className="absolute left-1/2 top-1/3 h-[420px] w-[760px] max-w-[130vw] -translate-x-1/2 rounded-full bg-volt/[0.10] blur-[130px]" />
+      {/* dodatno svetlo preko snimka — hero je namerno prejak, ne zatamnjen */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink-950/55 via-transparent to-ink-950" />
+      <div className="absolute inset-0 bg-grid-lines bg-[size:64px_64px] opacity-30" />
+      <div className="absolute left-1/2 top-[28%] h-[520px] w-[900px] max-w-[135vw] -translate-x-1/2 rounded-full bg-volt/25 blur-[150px]" />
+      <div className="absolute left-1/2 top-[22%] h-[360px] w-[620px] max-w-[120vw] -translate-x-1/2 rounded-full bg-sky-300/20 blur-[130px]" />
     </motion.div>
   );
 }
@@ -71,7 +73,13 @@ export function Hero() {
       <HeroBackdrop style={{ scale: backdropScale, opacity: backdropOpacity }} />
 
       <motion.div style={{ y: contentY, opacity: contentOpacity }} className="container">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto max-w-3xl text-center">
+          {/* mekana senka tačno ispod teksta — video ostaje svetao, natpis čitljiv */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -inset-x-12 -inset-y-10 -z-10 rounded-[3rem] bg-[radial-gradient(closest-side,rgba(12,12,20,0.72),rgba(12,12,20,0.35)_62%,transparent)]"
+          />
+
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -89,7 +97,7 @@ export function Hero() {
 
           <TextReveal
             as="h1"
-            className="heading-xl mt-7"
+            className="heading-xl text-hard mt-7"
             delay={0.1}
             segments={[
               { text: "Neprekidna energija za" },
@@ -97,11 +105,15 @@ export function Hero() {
             ]}
           />
 
+          <div className="mt-6 flex justify-center">
+            <span className="rule-hazard" />
+          </div>
+
           <motion.p
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.16, ease: EASE }}
-            className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-steel-300 sm:text-lg"
+            className="text-hard mx-auto mt-6 max-w-xl text-base font-medium leading-relaxed text-white/90 sm:text-lg"
           >
             Prodaja, iznajmljivanje i servis agregata širom Srbije — sa automatikom
             koja preuzima napajanje u sekundi.
@@ -138,7 +150,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.42, ease: EASE }}
             className="mt-8 flex justify-center"
           >
-            <span className="animate-float-slow rounded-full border border-volt/25 bg-volt/[0.08] px-4 py-2 text-sm font-semibold text-volt-200 shadow-volt-sm backdrop-blur-sm">
+            <span className="animate-float-slow rounded-full border border-volt/60 bg-volt/25 px-4 py-2 text-sm font-bold uppercase tracking-wide text-white shadow-volt backdrop-blur-sm">
               ⚡ Odziv na teren u roku od {site.responseTime}
             </span>
           </motion.div>
@@ -153,11 +165,15 @@ export function Hero() {
           {highlights.map((item) => (
             <li
               key={item.label}
-              className="glass rounded-2xl px-4 py-5 text-center transition-colors duration-300 hover:border-volt/25"
+              className="rounded-2xl border border-white/20 bg-white/[0.10] px-4 py-5 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-volt/60 hover:bg-volt/[0.14]"
             >
-              <item.icon className="mx-auto h-5 w-5 text-volt" />
-              <p className="mt-3 font-display text-lg font-bold text-white">{item.value}</p>
-              <p className="mt-1 text-xs uppercase tracking-[0.12em] text-steel-500">{item.label}</p>
+              <item.icon className="mx-auto h-5 w-5 text-volt-400" />
+              <p className="mt-3 font-display text-lg font-extrabold uppercase text-white">
+                {item.value}
+              </p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-steel-400">
+                {item.label}
+              </p>
             </li>
           ))}
         </motion.ul>
