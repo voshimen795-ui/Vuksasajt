@@ -11,27 +11,31 @@ const config: Config = {
     },
     extend: {
       colors: {
+        /* podloga nije siva nego mornarsko plava — boja brenda se provlači
+           kroz celu stranu, a ne samo kroz akcente */
         ink: {
-          950: "#1A1A24",
-          900: "#23232E",
-          850: "#2C2C38",
-          800: "#373744",
-          700: "#484857",
+          950: "#111A2E",
+          900: "#17223C",
+          850: "#1E2B4B",
+          800: "#26355C",
+          700: "#374878",
         },
         /* "volt" je zadržan kao ime akcenta, ali je sada tamnoplava iz logotipa */
+        /* podloga je sada plava, pa akcenat mora da bude svetliji od nje da
+           bi dugmad i oznake i dalje iskakale */
         volt: {
-          DEFAULT: "#3B50A1",
+          DEFAULT: "#4A66CC",
           50: "#EDF1FB",
-          200: "#AFBCE6",
-          400: "#6E87D6",
-          500: "#4A62BE",
-          600: "#3B50A1",
-          700: "#2B3B78",
+          200: "#B8C5F0",
+          400: "#7D95E4",
+          500: "#5B78D6",
+          600: "#4A66CC",
+          700: "#3B50A1",
         },
         steel: {
-          300: "#E6E9F0",
-          400: "#C2C8D4",
-          500: "#98A0AF",
+          300: "#E4EAF7",
+          400: "#BFC9E4",
+          500: "#94A2C4",
         },
       },
       fontFamily: {

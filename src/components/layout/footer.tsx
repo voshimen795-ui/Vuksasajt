@@ -6,7 +6,8 @@ import { mapsLink, navLinks, serviceLinks, site } from "@/config/site";
 export function Footer() {
   return (
     <footer className="relative border-t border-white/45 bg-ink-800">
-      <div className="container py-16 lg:py-20">
+      {/* donji razmak ostavlja mesta plutajućoj traci za poziv na mobilnom */}
+      <div className="container pb-28 pt-16 sm:pb-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.7fr_0.7fr_1.1fr] lg:gap-10">
           <div>
             <Logo />
@@ -35,6 +36,32 @@ export function Footer() {
                 <Instagram className="h-4 w-4" />
               </a>
             </div>
+
+            <a
+              href={mapsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative mt-8 flex h-[160px] max-w-xs items-center justify-center overflow-hidden rounded-2xl border border-white/45 bg-ink-850 transition-colors hover:border-volt/60"
+            >
+              <span
+                aria-hidden
+                className="absolute inset-0 bg-grid-lines bg-[size:34px_34px] opacity-70"
+              />
+              <span
+                aria-hidden
+                className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-volt/30 blur-3xl"
+              />
+              <span className="relative flex flex-col items-center gap-2 px-5 text-center">
+                <span className="relative flex h-10 w-10 items-center justify-center rounded-full border border-volt/55 bg-volt/25 text-volt-200">
+                  <MapPin className="h-4 w-4" />
+                  <span className="absolute inset-0 animate-pulse-ring rounded-full bg-volt/30" />
+                </span>
+                <span className="font-display text-sm font-bold text-white">
+                  {site.address.street}, {site.address.district}
+                </span>
+                <span className="text-xs text-steel-500">otvorite u Google Mapama</span>
+              </span>
+            </a>
           </div>
 
           <nav aria-label="Meni">
@@ -140,35 +167,8 @@ export function Footer() {
           </div>
         </div>
 
-        <a
-          href={mapsLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group relative mt-14 flex h-[220px] items-center justify-center overflow-hidden rounded-3xl border border-white/45 bg-ink-800 transition-colors hover:border-volt/60 sm:h-[260px]"
-        >
-          <span
-            aria-hidden
-            className="absolute inset-0 bg-grid-lines bg-[size:38px_38px] opacity-70"
-          />
-          <span
-            aria-hidden
-            className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-volt/25 blur-3xl"
-          />
-          <span className="relative flex flex-col items-center gap-3 text-center">
-            <span className="relative flex h-12 w-12 items-center justify-center rounded-full border border-volt/55 bg-volt/25 text-volt-400">
-              <MapPin className="h-5 w-5" />
-              <span className="absolute inset-0 animate-pulse-ring rounded-full bg-volt/30" />
-            </span>
-            <span className="font-display text-lg font-bold text-white">
-              {site.address.street}, {site.address.district}
-            </span>
-            <span className="text-sm text-steel-500">
-              {site.address.postal} {site.address.city} — otvorite u Google Mapama
-            </span>
-          </span>
-        </a>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/45 pt-8 text-xs text-steel-500 sm:flex-row">
+        <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-white/45 pt-8 text-center text-xs text-steel-500 sm:flex-row sm:text-left">
           <p>
             © {new Date().getFullYear()} {site.legalName}. Sva prava zadržana.
           </p>
