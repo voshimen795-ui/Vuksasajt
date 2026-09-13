@@ -22,10 +22,10 @@ function ProjectCard({ project }: { project: Project }) {
       <DialogTrigger asChild>
         <button
           type="button"
-          className="group relative flex h-full w-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-850/60 text-left transition-[border-color,box-shadow] duration-500 hover:border-volt/35 hover:shadow-panel"
+          className="group relative flex h-full w-full flex-col overflow-hidden rounded-3xl border border-white/[0.18] bg-ink-800/65 text-left transition-[border-color,box-shadow] duration-500 hover:border-volt/60 hover:shadow-panel"
         >
-          <div className="relative flex h-48 items-center justify-center overflow-hidden border-b border-white/10 bg-gradient-to-b from-white/[0.05] to-transparent">
-            <div className="absolute inset-x-10 bottom-0 h-24 rounded-full bg-volt/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
+          <div className="relative flex h-48 items-center justify-center overflow-hidden border-b border-white/[0.18] bg-gradient-to-b from-white/[0.05] to-transparent">
+            <div className="absolute inset-x-10 bottom-0 h-24 rounded-full bg-volt/20 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
             {project.image ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
@@ -40,7 +40,7 @@ function ProjectCard({ project }: { project: Project }) {
                 className="relative h-32 w-auto transition-transform duration-500 group-hover:scale-105"
               />
             )}
-            <span className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-ink-950/70 text-steel-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <span className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.18] bg-ink-950/70 text-steel-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               <Maximize2 className="h-4 w-4" />
             </span>
           </div>
@@ -52,11 +52,11 @@ function ProjectCard({ project }: { project: Project }) {
             </p>
 
             <div className="mt-5 flex flex-wrap gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[11px] font-medium text-steel-300">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.18] bg-white/[0.13] px-3 py-1.5 text-[11px] font-medium text-steel-300">
                 <Zap className="h-3 w-3 text-volt" />
                 {project.power}
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[11px] font-medium text-steel-300">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.18] bg-white/[0.13] px-3 py-1.5 text-[11px] font-medium text-steel-300">
                 <Building2 className="h-3 w-3 text-volt" />
                 {project.objectType}
               </span>
@@ -74,10 +74,10 @@ function ProjectCard({ project }: { project: Project }) {
         </DialogDescription>
 
         <div className="mt-6 grid grid-cols-2 gap-2 text-xs">
-          <span className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5 text-steel-300">
+          <span className="rounded-lg border border-white/[0.18] bg-white/[0.07] px-3 py-2.5 text-steel-300">
             Snaga: <span className="font-semibold text-white">{project.power}</span>
           </span>
-          <span className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5 text-steel-300">
+          <span className="rounded-lg border border-white/[0.18] bg-white/[0.07] px-3 py-2.5 text-steel-300">
             Objekat: <span className="font-semibold text-white">{project.objectType}</span>
           </span>
         </div>
@@ -126,14 +126,14 @@ export function Gallery() {
                   "relative shrink-0 rounded-full border px-4 py-2.5 text-sm font-semibold transition-colors duration-300",
                   isActive
                     ? "border-transparent text-white"
-                    : "border-white/10 bg-white/[0.03] text-steel-400 hover:border-white/25 hover:text-white",
+                    : "border-white/[0.18] bg-white/[0.07] text-steel-400 hover:border-white/40 hover:text-white",
                 )}
               >
                 {isActive && (
                   <motion.span
                     layoutId="gallery-pill"
                     transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                    className="absolute inset-0 -z-10 rounded-full border border-volt/50 bg-volt/15 shadow-volt-sm"
+                    className="absolute inset-0 -z-10 rounded-full border border-volt/50 bg-volt/25 shadow-volt-sm"
                   />
                 )}
                 {category.label}

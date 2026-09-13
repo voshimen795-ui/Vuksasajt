@@ -5,7 +5,7 @@ import { mapsLink, navLinks, serviceLinks, site } from "@/config/site";
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/10 bg-ink-900/60">
+    <footer className="relative border-t border-white/[0.18] bg-ink-800/65">
       <div className="container py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.7fr_0.7fr_1.1fr] lg:gap-10">
           <div>
@@ -21,7 +21,7 @@ export function Footer() {
                 aria-label="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-steel-400 transition-colors hover:border-volt/35 hover:text-white"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.18] bg-white/[0.07] text-steel-400 transition-colors hover:border-volt/60 hover:text-white"
               >
                 <Facebook className="h-4 w-4" />
               </a>
@@ -30,7 +30,7 @@ export function Footer() {
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-steel-400 transition-colors hover:border-volt/35 hover:text-white"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.18] bg-white/[0.07] text-steel-400 transition-colors hover:border-volt/60 hover:text-white"
               >
                 <Instagram className="h-4 w-4" />
               </a>
@@ -74,7 +74,7 @@ export function Footer() {
 
             <a
               href={site.phones.mobile.href}
-              className="mt-5 flex items-center gap-3 rounded-2xl border border-volt/25 bg-volt/[0.08] p-4 transition-colors hover:border-volt/50"
+              className="mt-5 flex items-center gap-3 rounded-2xl border border-volt/50 bg-volt/[0.08] p-4 transition-colors hover:border-volt/50"
             >
               <span className="relative flex h-2.5 w-2.5 shrink-0">
                 <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-emerald-400" />
@@ -144,7 +144,7 @@ export function Footer() {
           href={mapsLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative mt-14 flex h-[220px] items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-ink-850/60 transition-colors hover:border-volt/35 sm:h-[260px]"
+          className="group relative mt-14 flex h-[220px] items-center justify-center overflow-hidden rounded-3xl border border-white/[0.18] bg-ink-800/65 transition-colors hover:border-volt/60 sm:h-[260px]"
         >
           <span
             aria-hidden
@@ -152,10 +152,10 @@ export function Footer() {
           />
           <span
             aria-hidden
-            className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-volt/15 blur-3xl"
+            className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-volt/25 blur-3xl"
           />
           <span className="relative flex flex-col items-center gap-3 text-center">
-            <span className="relative flex h-12 w-12 items-center justify-center rounded-full border border-volt/35 bg-volt/15 text-volt">
+            <span className="relative flex h-12 w-12 items-center justify-center rounded-full border border-volt/55 bg-volt/25 text-volt">
               <MapPin className="h-5 w-5" />
               <span className="absolute inset-0 animate-pulse-ring rounded-full bg-volt/30" />
             </span>
@@ -168,7 +168,7 @@ export function Footer() {
           </span>
         </a>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-steel-500 sm:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/[0.18] pt-8 text-xs text-steel-500 sm:flex-row">
           <p>
             © {new Date().getFullYear()} {site.legalName}. Sva prava zadržana.
           </p>

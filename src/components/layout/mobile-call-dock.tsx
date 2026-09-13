@@ -23,7 +23,7 @@ export function MobileCallDock() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 90, opacity: 0 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-ink-950/90 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur-xl sm:hidden"
+          className="fixed inset-x-0 bottom-0 z-40 border-t border-white/[0.18] bg-ink-950/90 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur-xl sm:hidden"
         >
           <div className="flex items-center gap-2.5">
             <a
@@ -39,7 +39,7 @@ export function MobileCallDock() {
             <a
               href="/#ponuda"
               aria-label="Zatražite ponudu"
-              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/[0.06] text-white"
+              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/[0.11] text-white"
             >
               <FileText className="h-5 w-5" />
             </a>

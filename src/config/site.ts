@@ -4,7 +4,7 @@ export const site = {
   tagline: "Agregati i generatori struje",
   domain: "https://agregati-generatori.com",
   description:
-    "Prodaja, iznajmljivanje i servis dizel i benzinskih agregata u Srbiji. Automatski ormari (ATS), vodene pumpe i hitne intervencije 24/7.",
+    "Prodaja, iznajmljivanje i servis dizel i benzinskih agregata u Srbiji. Automatski ormari (ATS) i hitne intervencije 24/7.",
   address: {
     street: "Kanadska 2",
     district: "Višnjička banja",

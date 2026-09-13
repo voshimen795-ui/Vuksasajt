@@ -37,7 +37,7 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-40 transition-all duration-500",
-        scrolled ? "border-b border-white/10 bg-ink-950/80 backdrop-blur-xl" : "border-b border-transparent",
+        scrolled ? "border-b border-white/[0.18] bg-ink-950/80 backdrop-blur-xl" : "border-b border-transparent",
       )}
     >
       <div className="container flex h-[72px] items-center justify-between gap-4">
@@ -51,7 +51,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               className={cn(
-                "link-swap rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-white/5",
+                "link-swap rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-white/15",
                 pathname === link.href ? "text-white" : "text-steel-400",
               )}
             >
@@ -64,7 +64,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <a
             href={site.phones.mobile.href}
-            className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:border-volt/40 hover:bg-volt/10 sm:inline-flex"
+            className="hidden items-center gap-2 rounded-full border border-white/[0.18] bg-white/[0.13] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:border-volt/60 hover:bg-volt/20 sm:inline-flex"
           >
             <Phone className="h-4 w-4 text-volt" />
             {site.phones.mobile.label}
@@ -79,7 +79,7 @@ export function Navbar() {
             onClick={() => setOpen((value) => !value)}
             aria-label={open ? "Zatvori meni" : "Otvori meni"}
             aria-expanded={open}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.18] bg-white/[0.13] text-white lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -93,7 +93,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="border-t border-white/10 bg-ink-950/95 backdrop-blur-xl lg:hidden"
+            className="border-t border-white/[0.18] bg-ink-950/95 backdrop-blur-xl lg:hidden"
           >
             <div className="container flex flex-col gap-1 py-5">
               {navLinks.map((link) => (
@@ -101,7 +101,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-xl px-4 py-3.5 text-base font-medium text-steel-300 transition-colors hover:bg-white/5 hover:text-white"
+                  className="rounded-xl px-4 py-3.5 text-base font-medium text-steel-300 transition-colors hover:bg-white/15 hover:text-white"
                 >
                   {link.label}
                 </Link>

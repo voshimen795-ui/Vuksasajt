@@ -40,8 +40,8 @@ export function AboutStory() {
             <div className="mt-6 space-y-5 text-base leading-relaxed text-steel-400">
               <p>
                 {site.legalName} se bavi prodajom, iznajmljivanjem i servisom agregata i
-                vodenih pumpi — za domaćinstva, gradilišta i firme kojima prekid napajanja
-                pravi štetu.
+                generatora struje — za domaćinstva, gradilišta i firme kojima prekid
+                napajanja pravi štetu.
               </p>
               <p>
                 Pre ponude pitamo šta pokrećete, da li vam treba tih rad i da li je
@@ -55,7 +55,7 @@ export function AboutStory() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-volt/[0.10] via-ink-850 to-ink-900 p-8 sm:p-10">
+            <div className="relative overflow-hidden rounded-3xl border border-white/[0.18] bg-gradient-to-br from-volt/20 via-ink-800/80 to-ink-850/80 p-8 sm:p-10">
               <div
                 aria-hidden
                 className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-volt/20 blur-[90px]"
@@ -82,9 +82,9 @@ export function AboutStory() {
           <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, index) => (
               <StaggerItem key={step.title}>
-                <div className="group h-full rounded-3xl border border-white/10 bg-ink-850/60 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-volt/30">
+                <div className="group h-full rounded-3xl border border-white/[0.18] bg-ink-800/65 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-volt/60">
                   <div className="flex items-center justify-between">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-volt transition-colors duration-500 group-hover:border-volt/35 group-hover:bg-volt/10">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.18] bg-white/15 text-volt transition-colors duration-500 group-hover:border-volt/60 group-hover:bg-volt/20">
                       <step.icon className="h-5 w-5" />
                     </span>
                     <span className="font-display text-sm font-bold text-steel-500">

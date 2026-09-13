@@ -8,7 +8,7 @@ import { site } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "O nama",
-  description: `${site.legalName} — prodaja, iznajmljivanje i servis agregata, generatora struje i vodenih pumpi. Sedište u ${site.address.city}u, izlazak na teren širom Srbije.`,
+  description: `${site.legalName} — prodaja, iznajmljivanje i servis agregata i generatora struje. Sedište u ${site.address.city}u, izlazak na teren širom Srbije.`,
   alternates: { canonical: "/o-nama" },
 };
 
