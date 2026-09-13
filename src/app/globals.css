@@ -5,7 +5,7 @@
 @layer base {
   :root {
     color-scheme: dark;
-    --volt: 255 85 0;
+    --volt: 59 80 161;
   }
 
   * {
@@ -31,9 +31,9 @@
     pointer-events: none;
     background:
       radial-gradient(1000px circle at 50% -8%, rgba(140, 180, 255, 0.28), transparent 70%),
-      radial-gradient(820px circle at 88% 20%, rgba(255, 85, 0, 0.20), transparent 65%),
+      radial-gradient(820px circle at 88% 20%, rgba(74, 98, 190, 0.30), transparent 65%),
       radial-gradient(900px circle at 5% 70%, rgba(140, 180, 255, 0.18), transparent 70%),
-      radial-gradient(700px circle at 70% 95%, rgba(255, 85, 0, 0.14), transparent 65%),
+      radial-gradient(700px circle at 70% 95%, rgba(74, 98, 190, 0.22), transparent 65%),
       linear-gradient(180deg, #3b3b49 0%, #2e2e3a 45%, #26262f 100%);
   }
 
@@ -134,7 +134,7 @@
 
 @layer utilities {
   .text-gradient-volt {
-    @apply bg-gradient-to-br from-volt-200 via-volt-400 to-volt bg-clip-text text-transparent;
+    @apply bg-gradient-to-br from-white via-volt-200 to-volt-400 bg-clip-text text-transparent;
   }
 
   /* naslov ostaje čitljiv preko svetlog videa — drop-shadow radi i sa

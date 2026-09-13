@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LogoMark } from "@/components/layout/logo";
 import { Reveal } from "@/components/motion/reveal";
 import { site } from "@/config/site";
 
@@ -22,6 +23,10 @@ export function CtaBand({
               aria-hidden
               className="pointer-events-none absolute -right-16 -top-24 h-72 w-72 rounded-full bg-volt/20 blur-[100px]"
             />
+            <LogoMark
+              size={320}
+              className="pointer-events-none absolute -bottom-20 -right-10 z-0 hidden h-60 w-auto opacity-[0.12] lg:block"
+            />
             <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-xl">
                 <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">{title}</h2>
@@ -37,7 +42,7 @@ export function CtaBand({
                 </Button>
                 <Button asChild variant="glass" size="lg">
                   <a href={site.phones.mobile.href}>
-                    <Phone className="h-4 w-4 text-volt" />
+                    <Phone className="h-4 w-4 text-volt-400" />
                     {site.phones.mobile.label}
                   </a>
                 </Button>

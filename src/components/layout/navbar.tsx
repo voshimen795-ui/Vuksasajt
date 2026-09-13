@@ -66,7 +66,7 @@ export function Navbar() {
             href={site.phones.mobile.href}
             className="hidden items-center gap-2 rounded-full border border-white/[0.18] bg-white/[0.13] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:border-volt/60 hover:bg-volt/20 sm:inline-flex"
           >
-            <Phone className="h-4 w-4 text-volt" />
+            <Phone className="h-4 w-4 text-volt-400" />
             {site.phones.mobile.label}
           </a>
 
@@ -114,7 +114,7 @@ export function Navbar() {
                 </Button>
                 <Button asChild variant="glass" size="lg">
                   <a href={site.phones.mobile.href}>
-                    <Phone className="h-4 w-4 text-volt" />
+                    <Phone className="h-4 w-4 text-volt-400" />
                     {site.phones.mobile.label}
                   </a>
                 </Button>

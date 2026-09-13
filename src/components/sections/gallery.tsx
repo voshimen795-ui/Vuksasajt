@@ -53,11 +53,11 @@ function ProjectCard({ project }: { project: Project }) {
 
             <div className="mt-5 flex flex-wrap gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.18] bg-white/[0.13] px-3 py-1.5 text-[11px] font-medium text-steel-300">
-                <Zap className="h-3 w-3 text-volt" />
+                <Zap className="h-3 w-3 text-volt-400" />
                 {project.power}
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.18] bg-white/[0.13] px-3 py-1.5 text-[11px] font-medium text-steel-300">
-                <Building2 className="h-3 w-3 text-volt" />
+                <Building2 className="h-3 w-3 text-volt-400" />
                 {project.objectType}
               </span>
             </div>
@@ -88,7 +88,7 @@ function ProjectCard({ project }: { project: Project }) {
         <ul className="mt-3 space-y-2">
           {project.scope.map((item) => (
             <li key={item} className="flex items-center gap-2.5 text-sm text-steel-300">
-              <Check className="h-4 w-4 shrink-0 text-volt" strokeWidth={2.5} />
+              <Check className="h-4 w-4 shrink-0 text-volt-400" strokeWidth={2.5} />
               {item}
             </li>
           ))}

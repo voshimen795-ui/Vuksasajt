@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 export type ArtVariant = "portable" | "inverter" | "industrial" | "ats";
 
 const stroke = "rgba(255,255,255,0.8)";
-const accent = "#FF5500";
+const accent = "#6E87D6";
 const faint = "rgba(255,255,255,0.22)";
 
 function Portable() {

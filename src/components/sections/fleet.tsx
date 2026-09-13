@@ -135,7 +135,7 @@ function ProductCard({ product }: { product: Product }) {
               key={spec.label}
               className="flex items-center gap-2 rounded-lg border border-white/[0.18] bg-white/[0.07] px-2.5 py-2 text-[11px] font-medium text-steel-300"
             >
-              <spec.icon className="h-3.5 w-3.5 shrink-0 text-volt" />
+              <spec.icon className="h-3.5 w-3.5 shrink-0 text-volt-400" />
               <span className="truncate">{spec.label}</span>
             </li>
           ))}

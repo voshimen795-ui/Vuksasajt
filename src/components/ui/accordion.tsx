@@ -36,7 +36,7 @@ export const AccordionTrigger = React.forwardRef<
       {...props}
     >
       {children}
-      <Plus className="h-5 w-5 shrink-0 text-volt transition-transform duration-300 group-data-[state=open]:rotate-45" />
+      <Plus className="h-5 w-5 shrink-0 text-volt-400 transition-transform duration-300 group-data-[state=open]:rotate-45" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));

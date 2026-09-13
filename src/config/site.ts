@@ -1,5 +1,5 @@
 export const site = {
-  brand: "DRMTN",
+  brand: "DERMATINA",
   legalName: '"DERMATINA" d.o.o.',
   tagline: "Agregati i generatori struje",
   domain: "https://agregati-generatori.com",

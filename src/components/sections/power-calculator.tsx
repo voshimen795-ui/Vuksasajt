@@ -171,7 +171,7 @@ export function PowerCalculator() {
 
                 <div className="mt-6 flex flex-wrap gap-2">
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.18] bg-white/15 px-3 py-1.5 text-xs font-semibold text-steel-300">
-                    <Fuel className="h-3.5 w-3.5 text-volt" />
+                    <Fuel className="h-3.5 w-3.5 text-volt-400" />
                     {result.fuel}
                   </span>
                   {result.needsAts && (
