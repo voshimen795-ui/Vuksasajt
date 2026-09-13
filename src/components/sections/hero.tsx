@@ -175,7 +175,7 @@ export function Hero() {
           {highlights.map((item) => (
             <li
               key={item.label}
-              className="rounded-2xl border border-white/20 bg-white/[0.10] px-4 py-5 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-volt/60 hover:bg-volt/[0.14]"
+              className="rounded-2xl border border-white/40 bg-ink-950/70 px-4 py-5 text-center shadow-panel backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-volt-400 hover:bg-ink-950/85"
             >
               <item.icon className="mx-auto h-5 w-5 text-volt-400" />
               <p className="mt-3 font-display text-lg font-extrabold uppercase text-white">

@@ -5,7 +5,7 @@ import { mapsLink, navLinks, serviceLinks, site } from "@/config/site";
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/[0.18] bg-ink-800/65">
+    <footer className="relative border-t border-white/45 bg-ink-800">
       <div className="container py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.7fr_0.7fr_1.1fr] lg:gap-10">
           <div>
@@ -21,7 +21,7 @@ export function Footer() {
                 aria-label="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.18] bg-white/[0.07] text-steel-400 transition-colors hover:border-volt/60 hover:text-white"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/45 bg-white/[0.12] text-steel-400 transition-colors hover:border-volt/60 hover:text-white"
               >
                 <Facebook className="h-4 w-4" />
               </a>
@@ -30,7 +30,7 @@ export function Footer() {
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.18] bg-white/[0.07] text-steel-400 transition-colors hover:border-volt/60 hover:text-white"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/45 bg-white/[0.12] text-steel-400 transition-colors hover:border-volt/60 hover:text-white"
               >
                 <Instagram className="h-4 w-4" />
               </a>
@@ -144,7 +144,7 @@ export function Footer() {
           href={mapsLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative mt-14 flex h-[220px] items-center justify-center overflow-hidden rounded-3xl border border-white/[0.18] bg-ink-800/65 transition-colors hover:border-volt/60 sm:h-[260px]"
+          className="group relative mt-14 flex h-[220px] items-center justify-center overflow-hidden rounded-3xl border border-white/45 bg-ink-800 transition-colors hover:border-volt/60 sm:h-[260px]"
         >
           <span
             aria-hidden
@@ -168,7 +168,7 @@ export function Footer() {
           </span>
         </a>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/[0.18] pt-8 text-xs text-steel-500 sm:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/45 pt-8 text-xs text-steel-500 sm:flex-row">
           <p>
             © {new Date().getFullYear()} {site.legalName}. Sva prava zadržana.
           </p>

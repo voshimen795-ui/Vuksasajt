@@ -43,7 +43,7 @@ export function PowerCalculator() {
         <Reveal>
           <div className="panel overflow-hidden shadow-panel">
             <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
-              <div className="border-b border-white/[0.18] p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
+              <div className="border-b border-white/45 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-steel-500">
                   1. Tip objekta
                 </p>
@@ -60,7 +60,7 @@ export function PowerCalculator() {
                           "relative rounded-full border px-4 py-2.5 text-sm font-semibold transition-all duration-300",
                           active
                             ? "border-volt/50 bg-volt/25 text-white shadow-volt-sm"
-                            : "border-white/[0.18] bg-white/[0.07] text-steel-400 hover:border-white/40 hover:text-white",
+                            : "border-white/45 bg-white/[0.12] text-steel-400 hover:border-white/60 hover:text-white",
                         )}
                       >
                         {item.label}
@@ -114,14 +114,14 @@ export function PowerCalculator() {
                             "flex items-center justify-between gap-3 rounded-xl border px-4 py-3 text-left text-sm transition-all duration-300",
                             active
                               ? "border-volt/45 bg-volt/20 text-white"
-                              : "border-white/[0.18] bg-white/[0.02] text-steel-400 hover:border-white/40 hover:text-white",
+                              : "border-white/45 bg-white/[0.02] text-steel-400 hover:border-white/60 hover:text-white",
                           )}
                         >
                           <span className="font-medium">{load.label}</span>
                           <span
                             className={cn(
                               "flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-colors",
-                              active ? "border-volt bg-volt text-white" : "border-white/20",
+                              active ? "border-volt bg-volt text-white" : "border-white/35",
                             )}
                           >
                             {active && <Check className="h-3.5 w-3.5" strokeWidth={3} />}
@@ -155,22 +155,22 @@ export function PowerCalculator() {
                 </p>
 
                 <dl className="mt-8 space-y-3 text-sm">
-                  <div className="flex items-center justify-between gap-4 rounded-xl border border-white/[0.18] bg-white/[0.07] px-4 py-3">
+                  <div className="flex items-center justify-between gap-4 rounded-xl border border-white/45 bg-white/[0.12] px-4 py-3">
                     <dt className="text-steel-400">Stalno opterećenje</dt>
                     <dd className="font-semibold text-white">{formatKw(result.continuousKw)} kW</dd>
                   </div>
-                  <div className="flex items-center justify-between gap-4 rounded-xl border border-white/[0.18] bg-white/[0.07] px-4 py-3">
+                  <div className="flex items-center justify-between gap-4 rounded-xl border border-white/45 bg-white/[0.12] px-4 py-3">
                     <dt className="text-steel-400">Vrh pri startu</dt>
                     <dd className="font-semibold text-white">{formatKw(result.peakKw)} kW</dd>
                   </div>
-                  <div className="flex items-center justify-between gap-4 rounded-xl border border-white/[0.18] bg-white/[0.07] px-4 py-3">
+                  <div className="flex items-center justify-between gap-4 rounded-xl border border-white/45 bg-white/[0.12] px-4 py-3">
                     <dt className="text-steel-400">Rezerva snage</dt>
                     <dd className="font-semibold text-emerald-400">+{result.headroom}%</dd>
                   </div>
                 </dl>
 
                 <div className="mt-6 flex flex-wrap gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.18] bg-white/15 px-3 py-1.5 text-xs font-semibold text-steel-300">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-white/45 bg-white/15 px-3 py-1.5 text-xs font-semibold text-steel-300">
                     <Fuel className="h-3.5 w-3.5 text-volt-400" />
                     {result.fuel}
                   </span>

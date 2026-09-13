@@ -75,8 +75,8 @@ function SpotlightCard({
       ref={ref}
       onMouseMove={handleMove}
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/[0.18] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-volt/60 sm:p-8",
-        featured ? "bg-gradient-to-br from-volt/20 via-ink-800/75 to-ink-850/80" : "bg-ink-800/65",
+        "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/45 p-6 shadow-panel transition-all duration-500 hover:-translate-y-1 hover:border-volt/60 sm:p-8",
+        featured ? "bg-gradient-to-br from-volt/20 via-ink-800/75 to-ink-850/80" : "bg-ink-800",
         className,
       )}
     >
@@ -124,7 +124,7 @@ export function ServicesBento() {
                       "inline-flex h-12 w-12 items-center justify-center rounded-2xl border transition-colors duration-500",
                       service.urgent
                         ? "border-volt/60 bg-volt/25 text-volt-400"
-                        : "border-white/[0.18] bg-white/15 text-volt-400 group-hover:border-volt/60",
+                        : "border-white/45 bg-white/15 text-volt-400 group-hover:border-volt/60",
                     )}
                   >
                     <service.icon className="h-6 w-6" />
@@ -143,7 +143,7 @@ export function ServicesBento() {
                   {service.points.map((point) => (
                     <li
                       key={point}
-                      className="rounded-full border border-white/[0.18] bg-white/[0.13] px-3 py-1.5 text-xs font-medium text-steel-300"
+                      className="rounded-full border border-white/45 bg-white/[0.18] px-3 py-1.5 text-xs font-medium text-steel-300"
                     >
                       {point}
                     </li>

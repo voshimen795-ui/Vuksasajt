@@ -18,7 +18,7 @@ export function CtaBand({
     <section className="section pt-0">
       <div className="container">
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl border border-white/[0.18] bg-gradient-to-br from-volt/[0.12] via-ink-800/80 to-ink-850/80 p-8 sm:p-12">
+          <div className="relative overflow-hidden rounded-3xl border border-white/45 bg-gradient-to-br from-volt/[0.12] via-ink-800/80 to-ink-850/80 p-8 sm:p-12">
             <div
               aria-hidden
               className="pointer-events-none absolute -right-16 -top-24 h-72 w-72 rounded-full bg-volt/20 blur-[100px]"
