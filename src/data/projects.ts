@@ -1,12 +1,12 @@
 import type { ArtVariant } from "@/components/visuals/generator-art";
 
-export type ProjectCategory = "ugradnja" | "najam" | "servis" | "ats";
+export type ProjectCategory = "ugradnja" | "najam" | "dogadjaji" | "servis";
 
 export const projectCategories: { id: ProjectCategory | "svi"; label: string }[] = [
   { id: "svi", label: "Svi radovi" },
-  { id: "ugradnja", label: "Ugradnja" },
-  { id: "ats", label: "ATS automatika" },
   { id: "najam", label: "Iznajmljivanje" },
+  { id: "ugradnja", label: "Ugradnja i automatika" },
+  { id: "dogadjaji", label: "Događaji" },
   { id: "servis", label: "Servis" },
 ];
 
@@ -32,7 +32,7 @@ export const projects: Project[] = [
   {
     slug: "hladnjaca-ats",
     title: "Rezervno napajanje hladnjače",
-    category: "ats",
+    category: "ugradnja",
     summary:
       "Dizel agregat u kućištu sa automatikom, tako da rashladni sistem ne staje pri nestanku struje.",
     scope: ["Isporuka agregata", "ATS ormar", "Puštanje u rad"],
@@ -65,7 +65,7 @@ export const projects: Project[] = [
   {
     slug: "ordinacija-ats",
     title: "Automatika za ordinaciju",
-    category: "ats",
+    category: "ugradnja",
     summary:
       "ATS ormar koji pokreće agregat i prebacuje napajanje za nekoliko sekundi, bez intervencije osoblja.",
     scope: ["Izrada ormara", "Programiranje", "Testiranje"],
@@ -76,7 +76,7 @@ export const projects: Project[] = [
   {
     slug: "dogadjaj-najam",
     title: "Bešumno napajanje događaja",
-    category: "najam",
+    category: "dogadjaji",
     summary:
       "Inverterski agregati za bine i ugostiteljsku opremu, birani prema nivou buke.",
     scope: ["Proračun snage", "Dostava", "Dežurstvo na licu mesta"],

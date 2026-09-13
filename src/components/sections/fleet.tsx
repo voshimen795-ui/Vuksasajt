@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Fuel, Gauge, ShieldCheck, Volume2, Zap } from "lucide-react";
+import { Droplet, Fuel, Gauge, Plug, ShieldCheck, Timer, Volume2, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -99,54 +99,70 @@ function InquiryDialog({ product }: { product: Product }) {
   );
 }
 
+/** Specifikacije idu kao tabela red-po-red, da se modeli mogu porediti. */
+function SpecTable({ product }: { product: Product }) {
+  const rows: { icon: typeof Zap; label: string; value?: string }[] = [
+    { icon: Fuel, label: "Gorivo", value: product.fuel },
+    { icon: Plug, label: "Napon", value: product.phase },
+    { icon: Gauge, label: "Start", value: product.start },
+    { icon: Volume2, label: "Nivo buke", value: product.noise },
+    { icon: Droplet, label: "Rezervoar", value: product.tank },
+    { icon: Timer, label: "Autonomija", value: product.runtime },
+    { icon: ShieldCheck, label: "Garancija", value: product.warranty },
+  ].filter((row) => Boolean(row.value));
+
+  return (
+    <dl className="mt-5 divide-y divide-white/20 overflow-hidden rounded-xl border border-white/45 bg-ink-850">
+      {rows.map((row) => (
+        <div key={row.label} className="flex items-center justify-between gap-3 px-3.5 py-2.5">
+          <dt className="flex items-center gap-2 text-[12px] text-steel-500">
+            <row.icon className="h-3.5 w-3.5 shrink-0 text-volt-400" />
+            {row.label}
+          </dt>
+          <dd className="text-right text-[12px] font-semibold text-steel-300">{row.value}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
 function ProductCard({ product }: { product: Product }) {
-  const specs = [
-    { icon: Zap, label: product.power },
-    { icon: Fuel, label: product.fuel },
-    { icon: Volume2, label: product.noise },
-    { icon: ShieldCheck, label: product.warranty },
-  ];
+  const categoryLabel = categories.find((item) => item.id === product.category)?.label;
 
   return (
     <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/45 bg-ink-800 shadow-panel transition-[border-color,box-shadow] duration-500 hover:border-volt/60 hover:shadow-panel">
-      {product.featured && (
-        <span className="absolute left-5 top-5 z-10 rounded-full border border-volt/55 bg-volt/25 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-volt-200">
-          Izdvajamo
-        </span>
-      )}
-
-      <div className="relative flex h-44 items-center justify-center overflow-hidden border-b border-white/45 bg-gradient-to-b from-white/[0.05] to-transparent">
+      <div className="relative flex h-40 items-center justify-center overflow-hidden border-b border-white/45 bg-gradient-to-b from-white/[0.05] to-transparent">
         <div className="absolute inset-x-8 bottom-0 h-24 rounded-full bg-volt/20 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
         <GeneratorArt
           variant={product.art}
-          className="relative h-32 w-auto transition-transform duration-500 group-hover:scale-105"
+          className="relative h-28 w-auto transition-transform duration-500 group-hover:scale-105"
         />
+        <span className="absolute left-4 top-4 rounded-full border border-white/45 bg-ink-950/80 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-steel-300">
+          {categoryLabel}
+        </span>
+        {product.featured && (
+          <span className="absolute right-4 top-4 rounded-full border border-volt/55 bg-volt/25 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-volt-200">
+            Izdvajamo
+          </span>
+        )}
       </div>
 
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-display text-lg font-extrabold uppercase tracking-tight text-white">
+        <h3 className="font-display text-lg font-extrabold uppercase leading-tight tracking-tight text-white">
           {product.name}
         </h3>
-        <p className="mt-2 text-sm leading-relaxed text-steel-500">{product.useCase}</p>
 
-        <ul className="mt-5 grid grid-cols-2 gap-2">
-          {specs.map((spec) => (
-            <li
-              key={spec.label}
-              className="flex items-center gap-2 rounded-lg border border-white/45 bg-white/[0.12] px-2.5 py-2 text-[11px] font-medium text-steel-300"
-            >
-              <spec.icon className="h-3.5 w-3.5 shrink-0 text-volt-400" />
-              <span className="truncate">{spec.label}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-6 flex items-center gap-2 text-xs text-steel-500">
-          <Gauge className="h-3.5 w-3.5 text-steel-500" />
-          {product.start}
+        {/* snaga je glavni podatak po kome se bira, pa stoji izdvojeno */}
+        <div className="mt-4 flex items-baseline gap-2 rounded-xl border border-volt-400/40 bg-volt/15 px-4 py-3">
+          <Zap className="h-4 w-4 shrink-0 text-volt-400" />
+          <span className="font-display text-xl font-extrabold text-white">{product.power}</span>
         </div>
 
-        <div className="mt-5 pt-1">
+        <SpecTable product={product} />
+
+        <p className="mt-4 text-sm leading-relaxed text-steel-500">{product.useCase}</p>
+
+        <div className="mt-auto pt-5">
           <InquiryDialog product={product} />
         </div>
       </div>

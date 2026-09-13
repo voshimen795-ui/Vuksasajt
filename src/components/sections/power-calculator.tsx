@@ -31,7 +31,7 @@ export function PowerCalculator() {
   const result = React.useMemo(() => recommend(kw, loads), [kw, loads]);
 
   // the quote form lives on the home page, so the result travels in the URL
-  const quoteHref = `/?tip=${encodeURIComponent(profile.label)}&kva=${result.recommendedKva}&napomena=${encodeURIComponent(
+  const quoteHref = `/?tip=${encodeURIComponent(profile.label)}&kva=${result.recommendedKva}&kw=${result.recommendedKw}&napomena=${encodeURIComponent(
     `Kalkulator: ${formatKw(result.continuousKw)} kW stalno / ${formatKw(result.peakKw)} kW u startu.`,
   )}#ponuda`;
 
