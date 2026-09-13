@@ -41,7 +41,7 @@ function ChipGroup({
               "rounded-full border px-4 py-2.5 text-sm font-semibold transition-all duration-300",
               active
                 ? "border-volt/50 bg-volt/25 text-white shadow-volt-sm"
-                : "border-white/[0.18] bg-white/[0.07] text-steel-400 hover:border-white/40 hover:text-white",
+                : "border-white/45 bg-white/[0.12] text-steel-400 hover:border-white/60 hover:text-white",
             )}
           >
             {option}
@@ -133,7 +133,7 @@ export function QuoteForm() {
               <li>
                 <a
                   href={site.phones.mobile.href}
-                  className="group flex items-center gap-4 rounded-2xl border border-white/[0.18] bg-white/[0.07] p-4 transition-colors duration-300 hover:border-volt/60"
+                  className="group flex items-center gap-4 rounded-2xl border border-white/45 bg-white/[0.12] p-4 transition-colors duration-300 hover:border-volt/60"
                 >
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-volt/25 text-volt-400">
                     <Phone className="h-5 w-5" />
@@ -149,7 +149,7 @@ export function QuoteForm() {
               <li>
                 <a
                   href={site.phones.office.href}
-                  className="group flex items-center gap-4 rounded-2xl border border-white/[0.18] bg-white/[0.07] p-4 transition-colors duration-300 hover:border-volt/60"
+                  className="group flex items-center gap-4 rounded-2xl border border-white/45 bg-white/[0.12] p-4 transition-colors duration-300 hover:border-volt/60"
                 >
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 text-volt-400">
                     <Phone className="h-5 w-5" />
@@ -165,7 +165,7 @@ export function QuoteForm() {
               <li>
                 <a
                   href={`mailto:${site.email}`}
-                  className="group flex items-center gap-4 rounded-2xl border border-white/[0.18] bg-white/[0.07] p-4 transition-colors duration-300 hover:border-volt/60"
+                  className="group flex items-center gap-4 rounded-2xl border border-white/45 bg-white/[0.12] p-4 transition-colors duration-300 hover:border-volt/60"
                 >
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 text-volt-400">
                     <Mail className="h-5 w-5" />
@@ -178,7 +178,7 @@ export function QuoteForm() {
                   </span>
                 </a>
               </li>
-              <li className="flex items-center gap-4 rounded-2xl border border-white/[0.18] bg-white/[0.07] p-4">
+              <li className="flex items-center gap-4 rounded-2xl border border-white/45 bg-white/[0.12] p-4">
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 text-volt-400">
                   <MapPin className="h-5 w-5" />
                 </span>
@@ -355,7 +355,7 @@ export function QuoteForm() {
                     </AnimatePresence>
                   </div>
 
-                  <div className="mt-8 flex items-center gap-3 border-t border-white/[0.18] pt-6">
+                  <div className="mt-8 flex items-center gap-3 border-t border-white/45 pt-6">
                     {step > 0 && (
                       <Button
                         type="button"

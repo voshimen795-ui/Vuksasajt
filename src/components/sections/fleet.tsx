@@ -50,10 +50,10 @@ function InquiryDialog({ product }: { product: Product }) {
         </DialogDescription>
 
         <div className="mt-6 grid grid-cols-2 gap-2 text-xs">
-          <span className="rounded-lg border border-white/[0.18] bg-white/[0.07] px-3 py-2 text-steel-300">
+          <span className="rounded-lg border border-white/45 bg-white/[0.12] px-3 py-2 text-steel-300">
             {product.power}
           </span>
-          <span className="rounded-lg border border-white/[0.18] bg-white/[0.07] px-3 py-2 text-steel-300">
+          <span className="rounded-lg border border-white/45 bg-white/[0.12] px-3 py-2 text-steel-300">
             {product.fuel}
           </span>
         </div>
@@ -108,14 +108,14 @@ function ProductCard({ product }: { product: Product }) {
   ];
 
   return (
-    <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/[0.18] bg-ink-800/65 transition-[border-color,box-shadow] duration-500 hover:border-volt/60 hover:shadow-panel">
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/45 bg-ink-800 shadow-panel transition-[border-color,box-shadow] duration-500 hover:border-volt/60 hover:shadow-panel">
       {product.featured && (
         <span className="absolute left-5 top-5 z-10 rounded-full border border-volt/55 bg-volt/25 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-volt-200">
           Izdvajamo
         </span>
       )}
 
-      <div className="relative flex h-44 items-center justify-center overflow-hidden border-b border-white/[0.18] bg-gradient-to-b from-white/[0.05] to-transparent">
+      <div className="relative flex h-44 items-center justify-center overflow-hidden border-b border-white/45 bg-gradient-to-b from-white/[0.05] to-transparent">
         <div className="absolute inset-x-8 bottom-0 h-24 rounded-full bg-volt/20 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
         <GeneratorArt
           variant={product.art}
@@ -133,7 +133,7 @@ function ProductCard({ product }: { product: Product }) {
           {specs.map((spec) => (
             <li
               key={spec.label}
-              className="flex items-center gap-2 rounded-lg border border-white/[0.18] bg-white/[0.07] px-2.5 py-2 text-[11px] font-medium text-steel-300"
+              className="flex items-center gap-2 rounded-lg border border-white/45 bg-white/[0.12] px-2.5 py-2 text-[11px] font-medium text-steel-300"
             >
               <spec.icon className="h-3.5 w-3.5 shrink-0 text-volt-400" />
               <span className="truncate">{spec.label}</span>
@@ -207,7 +207,7 @@ export function Fleet() {
                     "relative shrink-0 rounded-full border px-4 py-2.5 text-sm font-semibold transition-colors duration-300",
                     isActive
                       ? "border-transparent text-white"
-                      : "border-white/[0.18] bg-white/[0.07] text-steel-400 hover:border-white/40 hover:text-white",
+                      : "border-white/45 bg-white/[0.12] text-steel-400 hover:border-white/60 hover:text-white",
                   )}
                 >
                   {isActive && (

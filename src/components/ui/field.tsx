@@ -2,7 +2,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 const base =
-  "w-full rounded-xl border border-white/[0.18] bg-white/[0.07] px-4 text-[15px] text-white placeholder:text-steel-500 transition-colors hover:border-white/20 focus:border-volt/60 focus:bg-white/[0.10] focus:outline-none focus:ring-0";
+  "w-full rounded-xl border border-white/45 bg-white/[0.12] px-4 text-[15px] text-white placeholder:text-steel-500 transition-colors hover:border-white/35 focus:border-volt/60 focus:bg-white/[0.16] focus:outline-none focus:ring-0";
 
 export const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(
   ({ className, ...props }, ref) => (

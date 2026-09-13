@@ -9,7 +9,7 @@
   }
 
   * {
-    @apply border-white/15;
+    @apply border-white/35;
   }
 
   html {
@@ -60,15 +60,15 @@
 
 @layer components {
   .glass {
-    @apply border border-white/20 bg-white/[0.09] backdrop-blur-xl;
+    @apply border border-white/40 bg-white/[0.16] backdrop-blur-xl;
   }
 
   .panel {
-    @apply rounded-3xl border border-white/15 bg-ink-800/70 backdrop-blur-xl;
+    @apply rounded-3xl border border-white/45 bg-ink-800 shadow-panel;
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.09] px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white;
+    @apply inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/[0.16] px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white;
   }
 
   .heading-xl {

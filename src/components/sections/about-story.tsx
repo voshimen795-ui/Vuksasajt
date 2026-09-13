@@ -55,7 +55,7 @@ export function AboutStory() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="relative overflow-hidden rounded-3xl border border-white/[0.18] bg-gradient-to-br from-volt/20 via-ink-800/80 to-ink-850/80 p-8 sm:p-10">
+            <div className="relative overflow-hidden rounded-3xl border border-white/45 bg-gradient-to-br from-volt/20 via-ink-800/80 to-ink-850/80 p-8 sm:p-10">
               <div
                 aria-hidden
                 className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-volt/20 blur-[90px]"
@@ -84,9 +84,9 @@ export function AboutStory() {
           <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, index) => (
               <StaggerItem key={step.title}>
-                <div className="group h-full rounded-3xl border border-white/[0.18] bg-ink-800/65 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-volt/60">
+                <div className="group h-full rounded-3xl border border-white/45 bg-ink-800 p-6 shadow-panel transition-all duration-500 hover:-translate-y-1 hover:border-volt/60">
                   <div className="flex items-center justify-between">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/[0.18] bg-white/15 text-volt-400 transition-colors duration-500 group-hover:border-volt/60 group-hover:bg-volt/20">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/45 bg-white/15 text-volt-400 transition-colors duration-500 group-hover:border-volt/60 group-hover:bg-volt/20">
                       <step.icon className="h-5 w-5" />
                     </span>
                     <span className="font-display text-sm font-bold text-steel-500">

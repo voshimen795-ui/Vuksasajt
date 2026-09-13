@@ -11,7 +11,7 @@ const buttonVariants = cva(
         primary:
           "btn-sheen overflow-hidden bg-volt text-white shadow-volt-sm hover:bg-volt-500 hover:shadow-volt",
         glass:
-          "glass text-white hover:border-white/40 hover:bg-white/[0.13]",
+          "glass text-white hover:border-white/60 hover:bg-white/[0.18]",
         outline:
           "border border-volt/60 text-volt-400 hover:border-volt hover:bg-volt/20 hover:text-volt-200",
         ghost: "text-steel-300 hover:bg-white/15 hover:text-white",
