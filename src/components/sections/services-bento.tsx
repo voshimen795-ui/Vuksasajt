@@ -117,7 +117,7 @@ export function ServicesBento() {
           </p>
         </Reveal>
 
-        <Stagger className="mt-14 grid gap-4 sm:gap-5 lg:grid-cols-6">
+        <Stagger className="mt-14 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-6">
           {services.map((service) => (
             <StaggerItem key={service.title} className={cn("min-w-0", service.className)}>
               <SpotlightCard

@@ -148,7 +148,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: EASE }}
-          className="mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4"
+          className="mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4"
         >
           {highlights.map((item) => (
             <li
