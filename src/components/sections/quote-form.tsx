@@ -132,7 +132,7 @@ export function QuoteForm() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 mx-auto h-[420px] max-w-5xl rounded-full bg-volt/[0.07] blur-[130px]" />
 
       <div className="container">
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16">
           <Reveal>
             <span className="eyebrow">Zatražite ponudu</span>
             <TextReveal

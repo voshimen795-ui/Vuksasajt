@@ -30,11 +30,11 @@
     z-index: -50;
     pointer-events: none;
     background:
-      radial-gradient(1000px circle at 50% -8%, rgba(140, 180, 255, 0.28), transparent 70%),
-      radial-gradient(820px circle at 88% 20%, rgba(74, 98, 190, 0.30), transparent 65%),
-      radial-gradient(900px circle at 5% 70%, rgba(140, 180, 255, 0.18), transparent 70%),
-      radial-gradient(700px circle at 70% 95%, rgba(74, 98, 190, 0.22), transparent 65%),
-      linear-gradient(180deg, #3b3b49 0%, #2e2e3a 45%, #26262f 100%);
+      radial-gradient(1000px circle at 50% -8%, rgba(120, 165, 255, 0.32), transparent 70%),
+      radial-gradient(820px circle at 88% 20%, rgba(59, 80, 161, 0.45), transparent 65%),
+      radial-gradient(900px circle at 5% 70%, rgba(110, 135, 214, 0.28), transparent 70%),
+      radial-gradient(700px circle at 70% 95%, rgba(59, 80, 161, 0.35), transparent 65%),
+      linear-gradient(180deg, #2b3a63 0%, #212d4d 45%, #1a2440 100%);
   }
 
   h1,
