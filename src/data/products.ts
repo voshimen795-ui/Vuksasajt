@@ -58,7 +58,6 @@ export const products: Product[] = [
     warranty: "2 godine",
     start: "Elektro start",
     useCase: "Domaćinstvo, radionica",
-    featured: true,
   },
   {
     slug: "inverter-2kw",
@@ -83,7 +82,6 @@ export const products: Product[] = [
     warranty: "2 godine",
     start: "Elektro start",
     useCase: "Ugostiteljstvo, događaji, bešumni rad",
-    featured: true,
   },
   {
     slug: "dizel-10kva",

@@ -148,7 +148,7 @@ function ProductCard({ product }: { product: Product }) {
       </div>
 
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-display text-lg font-extrabold uppercase leading-tight tracking-tight text-white">
+        <h3 className="font-display text-lg font-bold leading-tight text-white">
           {product.name}
         </h3>
 
@@ -199,7 +199,6 @@ export function Fleet() {
               className="heading-lg mt-6"
               segments={[{ text: "Agregati za" }, { text: "svaku namenu", accent: true }]}
             />
-            <span className="rule-hazard mt-6 block" />
             <p className="mt-5 text-base leading-relaxed text-steel-400">
               Od tihih inverterskih modela do industrijskih dizel agregata sa automatikom.
             </p>
