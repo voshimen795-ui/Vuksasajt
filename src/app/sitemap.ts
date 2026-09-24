@@ -3,6 +3,7 @@ import { site } from "@/config/site";
 
 const routes = [
   { path: "", priority: 1 },
+  { path: "/agregati", priority: 0.9 },
   { path: "/kalkulator", priority: 0.8 },
   { path: "/galerija", priority: 0.7 },
   { path: "/o-nama", priority: 0.6 },

@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/dialog";
 import { Input, Label, Textarea } from "@/components/ui/field";
 import { Reveal } from "@/components/motion/reveal";
-import { TextReveal } from "@/components/motion/text-reveal";
 import { TiltCard } from "@/components/ui/tilt-card";
 import { GeneratorArt } from "@/components/visuals/generator-art";
 import { categories, products, type CategoryId, type Product } from "@/data/products";
@@ -236,26 +235,10 @@ export function Fleet() {
   };
 
   return (
-    <section id="agregati" className="section">
+    /* naslov nosi PageHero na stranici /agregati, ovde ide samo katalog */
+    <section id="agregati" className="relative pb-14 pt-4 sm:pb-16 lg:pb-24">
       <div className="container">
-        <Reveal className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl">
-            <span className="eyebrow">Naša ponuda</span>
-            <TextReveal
-              className="heading-lg mt-6"
-              segments={[{ text: "Agregati za" }, { text: "svaku namenu", accent: true }]}
-            />
-            <p className="mt-5 text-base leading-relaxed text-steel-400">
-              Od tihih Honda invertera do industrijskih dizel agregata sa automatikom. Radimo sa
-              proverenim markama — Honda, Pramac, Kohler SDMO, FG Wilson, KJ Power i Endress.
-            </p>
-          </div>
-          <Button asChild variant="outline" size="md" className="shrink-0 self-start lg:self-end">
-            <a href="#ponuda">Tražite drugi model?</a>
-          </Button>
-        </Reveal>
-
-        <Reveal delay={0.08} className="mt-10">
+        <Reveal className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <div className="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 pb-1 sm:mx-0 sm:flex-wrap sm:px-0">
             {categories.map((category) => {
               const isActive = category.id === active;
@@ -284,6 +267,10 @@ export function Fleet() {
               );
             })}
           </div>
+
+          <Button asChild variant="outline" size="md" className="shrink-0 self-start sm:self-auto">
+            <a href="/#ponuda">Tražite drugi model?</a>
+          </Button>
         </Reveal>
 
         <motion.div layout className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">

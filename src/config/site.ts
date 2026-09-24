@@ -28,14 +28,14 @@ export const site = {
 
 export const navLinks = [
   { label: "Usluge", href: "/#usluge" },
-  { label: "Agregati", href: "/#agregati" },
+  { label: "Agregati", href: "/agregati" },
   { label: "Kalkulator", href: "/kalkulator" },
   { label: "Galerija", href: "/galerija" },
   { label: "O nama", href: "/o-nama" },
 ] as const;
 
 export const serviceLinks = [
-  { label: "Prodaja agregata", href: "/#agregati" },
+  { label: "Prodaja agregata", href: "/agregati" },
   { label: "Iznajmljivanje agregata", href: "/#usluge" },
   { label: "Servis agregata", href: "/#usluge" },
   { label: "Automatski ormari (ATS)", href: "/#usluge" },
